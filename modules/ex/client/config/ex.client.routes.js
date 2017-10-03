@@ -16,6 +16,18 @@
         templateUrl: 'modules/ex/client/views/ex.client.view.html',
         controller: 'ExController',
         controllerAs: 'vm'
+      })
+      .state('ex', {
+        url: '/ex',
+        templateUrl: 'modules/ex/client/views/ex.client.view.html',
+        controller: 'ExController',
+        controllerAs: 'vm'
+      })
+      .state('ex', {
+        url: '/ex',
+        templateUrl: 'modules/ex/client/views/ex.client.view.html',
+        controller: 'ExController',
+        controllerAs: 'vm'
       });
   }
 })();
