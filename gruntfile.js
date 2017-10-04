@@ -20,7 +20,7 @@ module.exports = function (grunt) {
       },
       dev: {
         NODE_ENV: 'development',
-        MONGOLAB_URI: 'mongodb://japanglais:iTzmai1@ds123124.mlab.com:23124'
+        MONGOLAB_URI: 'mongodb://japanglais:iTzmai@ds161164.mlab.com:61164'
       },
       prod: {
         NODE_ENV: 'production'
