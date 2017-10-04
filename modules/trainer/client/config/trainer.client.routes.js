@@ -16,6 +16,12 @@
         templateUrl: 'modules/trainer/client/views/trainer.client.view.html',
         controller: 'TrainerController',
         controllerAs: 'vm'
+      })
+      .state('home', {
+        url: '/home',
+        templateUrl: 'modules/trainer/client/views/home.client.view.html',
+        controller: 'TrainerController',
+        controllerAs: 'vm'
       });
   }
 })();
