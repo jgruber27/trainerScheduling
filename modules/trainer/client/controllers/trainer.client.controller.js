@@ -1,21 +1,25 @@
-(function() {
-  'use strict';
+'use strict';
+angular.module('trainers').controller('TrainerController', ['$scope', '$location', '$stateParams', '$state', 'Blog', 
+  function($scope, $location, $stateParams, $state, Blog){
+    $scope.find = function() {
+      /* set loader*/
+      $scope.loading = true;
 
-  angular
-    .module('trainer')
-    .controller('TrainerController', TrainerController);
+      /* Get all the listings, then bind it to the scope */
+      Blog.getAll().then(function(response) {
+        $scope.loading = false; //remove loader
+        $scope.blog = response.data;
+      }, function(error) {
+        $scope.loading = false;
+        $scope.error = 'Unable to retrieve listings!\n' + error;
+      });
+    };
 
-  TrainerController.$inject = ['$scope'];
-
-  function TrainerController($scope) {
-    var vm = this;
-
-    // Trainer controller logic
-    // ...
-
-    init();
-
-    function init() {
+     
+    /* Bind the success message to the scope if it exists as part of the current state */
+    if($stateParams.successMessage) {
+      $scope.success = $stateParams.successMessage;
     }
+
   }
-})();
+]);

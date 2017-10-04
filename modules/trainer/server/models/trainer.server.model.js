@@ -9,22 +9,22 @@ var mongoose = require('mongoose'),
 /**
  * Trainer Schema
  */
-var BlogSchema = new Schema({
-  __id: {
+/*var BlogSchema = new Schema({
+  _id: {
     type: String
   },
   blog: {
     type: String
   }
-});
+});*/
 var TrainerSchema = new Schema({
   // Trainer model fields
   // ...
 });
 
 var Trainer = mongoose.model('Trainer', TrainerSchema);
-var Blog = mongoose.model('Blog', BlogSchema);
+//var Blog = mongoose.model('Blog', BlogSchema);
 
 
 module.exports = Trainer;
-module.exports = Blog;
+//module.exports = Blog;

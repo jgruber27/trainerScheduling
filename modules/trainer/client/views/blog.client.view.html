@@ -1,4 +1,4 @@
-<section>
+<section ng-controller="TrainerController" ng-init="find()">
   <div class="page-header">
     <h1>Teaching Blog</h1>
     <div class="input-group add-on">
@@ -22,7 +22,7 @@
       2 Oct 2017
       </h3>
       <div>
-        MOAR TEXT!!! YAY TEXT! YAY BLOGS! YAY EXERCISE!
+        {{blog.blog}}
       </div>
     </div>
   </div>
