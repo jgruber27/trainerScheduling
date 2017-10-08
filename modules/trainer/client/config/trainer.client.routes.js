@@ -22,6 +22,12 @@
         templateUrl: 'modules/trainer/client/views/home.client.view.html',
         controller: 'TrainerController',
         controllerAs: 'vm'
+      })
+      .state('homadmin', {
+        url: '/homeadmin',
+        templateUrl: 'modules/trainer/client/views/homeadmin.client.view.html',
+        controller: 'TrainerController',
+        controllerAs: 'vm'
       });
   }
 })();
