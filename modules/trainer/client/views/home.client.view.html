@@ -18,7 +18,11 @@
     </div>
     <div class="row" style="float: right; background-color: #FFFFFF; width: 800px ; height: 600px; border: 1px solid black; margin: 10px;">
     <h3 style="color: #510859; background-color: #E96C1A; text-align: center; margin: 0px; padding: 12px;">Announcements</h3>
-    <div id="cc-homepage-announcements" style="height: 200px; overflow-x: hidden; overflow-y: auto; padding: 6px; text-align: left;"> </div>
+    <div id="cc-homepage-announcements" style="height: 200px; overflow-x: hidden; overflow-y: auto; padding: 6px; text-align: left;"> 
+      <p>Posted on {-{$scope.dateadded}} by {-{$scope.name}}
+      </p>
+      <p>{-{$scope.announcement}}</p>
+    </div>
     </div>
   </div>
     
