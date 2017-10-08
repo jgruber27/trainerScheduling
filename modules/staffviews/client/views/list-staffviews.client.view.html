@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Staffviews</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="staffview in vm.staffviews"
+       ui-sref="staffviews.view({ staffviewId: staffview._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="staffview.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="staffview.user" ng-bind="staffview.user.displayName"></span>
+        <span ng-if="!staffview.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="staffview.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.staffviews.$resolved && !vm.staffviews.length">
+    No Staffviews yet, why don't you <a ui-sref="staffviews.create">create one</a>?
+  </div>
+</section>
