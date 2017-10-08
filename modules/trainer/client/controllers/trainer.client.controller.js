@@ -4,7 +4,7 @@
   angular
     .module('trainer')
     .controller('TrainerController', TrainerController);
-b
+
   TrainerController.$inject = ['$scope'];
 
   function TrainerController($scope) {
