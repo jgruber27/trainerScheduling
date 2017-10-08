@@ -1,6 +1,11 @@
 'use strict';
-angular.module('trainers').controller('TrainerController', ['$scope', '$location', '$stateParams', '$state', 'Blog', 
-  function($scope, $location, $stateParams, $state, Blog){
+angular.module('trainer').controller('TrainerController', [
+  '$scope',
+  '$location',
+  '$stateParams',
+  '$state',
+  'Blog',
+  function($scope, $location, $stateParams, $state, Blog) {
     $scope.find = function() {
       /* set loader*/
       $scope.loading = true;
@@ -15,9 +20,8 @@ angular.module('trainers').controller('TrainerController', ['$scope', '$location
       });
     };
 
-     
     /* Bind the success message to the scope if it exists as part of the current state */
-    if($stateParams.successMessage) {
+    if ($stateParams.successMessage) {
       $scope.success = $stateParams.successMessage;
     }
 
