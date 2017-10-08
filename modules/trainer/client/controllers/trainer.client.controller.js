@@ -12,6 +12,7 @@ b
     $scope.announcements{
       $scope.dateAdded = "",
       $scope.name = "",
+      $scope.title = "",
       $scope.announcement = ""
     }
     // Trainer controller logic
@@ -23,10 +24,13 @@ b
     }
 
 
-    function createAnnouncement($scope){
-      $scope.name = name;
-      $scope.dateAdded = new Date();
-      $scope.announcement = announcement;
+    function createAnnouncement($scope, title, announcement){
+      $scope.announcements.name = name;
+      $scope.announcements.dateAdded = new Date();
+      $scope.announcements.titles = title;
+      $scope.announcements.announcement = announcement;
+      console.log(announcement);
+      console.log(title);
     }
   }
 })();

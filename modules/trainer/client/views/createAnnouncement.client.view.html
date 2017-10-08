@@ -4,11 +4,19 @@
       <div>
 	    <div>
 	    	<h2> Please input the new announcement </h2>
+	    	<div>
+		    	<label for="title" style="text-align: center"><h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Title:</h3></label>
 
-	        <label for="announcement"><h3>Message: </h3></label>
-	        <textarea id="announcement" name="user_message"></textarea>
+		        <input id="title" name="user_message_title" style= "width: 300px;"></input>
+	   		</div>
+
+	   		<div>
+		        <label for="announcement" style="text-align: center"><h3>Message: </h3></label>
+		        <input id="announcement" name="user_message" style= "height: 100px; width: 300px;"></input>
+	    	</div>
+
 	    </div>
-	    <a class="btn btn-primary btn-lg" ng-click="createAnnouncement()">Submit Announcement</a>
+	    <a class="btn btn-primary btn-lg" ng-click="createAnnouncement(title, announcement)">Submit Announcement</a>
 	  </div>
 	</div>
   </div>
