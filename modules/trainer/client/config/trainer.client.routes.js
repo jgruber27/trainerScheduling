@@ -28,6 +28,12 @@
         templateUrl: 'modules/trainer/client/views/homeadmin.client.view.html',
         controller: 'TrainerController',
         controllerAs: 'vm'
+      })
+      .state('createAnnouncement', {
+        url: '/createAnnouncement',
+        templateUrl: 'modules/trainer/client/views/createAnnouncement.client.view.html',
+        controller: 'TrainerController',
+        controllerAs: 'vm'
       });
   }
 })();
