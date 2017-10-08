@@ -11,9 +11,9 @@
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
       title: 'Schedules',
-      state: 'schedules',
-      type: 'dropdown',
-      roles: ['*']
+      state: 'schedules.list',
+      // type: 'dropdown',
+      // roles: ['*']
     });
 
     // Add the dropdown list item
