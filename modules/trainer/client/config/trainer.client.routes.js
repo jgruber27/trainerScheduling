@@ -1,3 +1,4 @@
+'use strict';
 angular.module('trainer').config([
   '$stateProvider',
   '$urlRouterProvider',
@@ -11,7 +12,7 @@ angular.module('trainer').config([
     }).state('blog', {
       url: '/blog',
       templateUrl: 'modules/trainer/client/views/blog.client.view.html',
-      controller: 'TrainerController'
+      controller: 'BlogController'
     });
   }
 ]);
