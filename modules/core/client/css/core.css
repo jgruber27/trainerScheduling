@@ -35,3 +35,22 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+
+.navigation {
+  background-color: #672C8E;
+  color: #FFFFFF;
+}
+
+.navigation a {
+  color: #FFFFFF;
+}
+
+.navigation a:hover {
+  color: #F26524;
+}
+
+.navigation .navbar-btn {
+  padding: 5px 20px 5px 20px;
+  background-color: #F26524;
+  border-radius: 5px;
+}
