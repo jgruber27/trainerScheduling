@@ -229,8 +229,9 @@
     function save(isValid) {
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.scheduleForm');
-        return false;
+        //return false;
       }
+      alert('hi');
       eventss();
       function eventss() {
         var fs = require('fs');
