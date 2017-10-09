@@ -12,4 +12,5 @@
 
     vm.requests = RequestsService.query();
   }
+
 }());
