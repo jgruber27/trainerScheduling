@@ -30,8 +30,14 @@
     });
 
     menuService.addSubMenuItem('topbar', 'staffviews', {
-      title: 'Something',
+      title: 'Request Off',
       state: 'staffviews.requestoff',
+      roles: ['user']
+    });
+
+    menuService.addSubMenuItem('topbar', 'staffviews', {
+      title: 'Availability',
+      state: 'staffviews.availability',
       roles: ['user']
     });
   }
