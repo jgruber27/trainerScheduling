@@ -3,9 +3,7 @@
     <h1>Schedules</h1>
   </div>
   <div class="list-group">
-    <a ng-repeat="schedule in vm.schedules"
-       ui-sref="schedules.view({ scheduleId: schedule._id })"
-       class="list-group-item">
+    <a ng-repeat="schedule in vm.schedules" ui-sref="schedules.view({ scheduleId: schedule._id })" class="list-group-item">
       <small class="list-group-item-text">
         Posted on
         <span ng-bind="schedule.created | date:'mediumDate'"></span>
@@ -16,7 +14,8 @@
       <h4 class="list-group-item-heading" ng-bind="schedule.name"></h4>
     </a>
   </div>
+  <button ng-click="creates()">Create event</button>
 
   <iframe src="https://calendar.google.com/calendar/embed?src=allegianceall%40gmail.com&ctz=America/New_York" style="border: 0" width=100% height="600" frameborder="0" scrolling="no"></iframe>
-  <button ui-sref="schedules.create">Create event</button>
+  
 </section>
