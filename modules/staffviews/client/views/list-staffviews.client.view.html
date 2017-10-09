@@ -16,7 +16,23 @@
       <h4 class="list-group-item-heading" ng-bind="staffview.name"></h4>
     </a>
   </div>
-  <div class="alert alert-warning text-center" ng-if="vm.staffviews.$resolved && !vm.staffviews.length">
-    No Staffviews yet, why don't you <a ui-sref="staffviews.create">create one</a>?
+  <!-- <div class="alert alert-warning text-center" ng-if="vm.staffviews.$resolved && !vm.staffviews.length"> -->
+    <!-- No Staffviews yet, why don't you <a ui-sref="staffviews.create">create one</a>? -->
+
+    <!-- put content here -->
+
+
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li><a href="#">Availability</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Request Off</a></li>
+        </ul>
+    </div>
+
+    <a class="btn btn-primary btn-lg" href="/Availability" target="_blank">Availability</a>
+
+
   </div>
 </section>
