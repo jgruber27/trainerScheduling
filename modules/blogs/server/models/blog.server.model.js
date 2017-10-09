@@ -16,6 +16,16 @@ var BlogSchema = new Schema({
     required: 'Please fill Blog name',
     trim: true
   },
+  content: {
+    type: String,
+    default: '',
+    trim: true
+  },
+    video: {
+    type: String,
+    default: '',
+    trim: true
+  },
   created: {
     type: Date,
     default: Date.now
