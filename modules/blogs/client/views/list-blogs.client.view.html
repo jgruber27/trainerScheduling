@@ -13,6 +13,7 @@
 </div>
 
 <!-- List the blog entries -->
+<div class="scroll">
 <div class="list-group">
   <a ng-repeat="blog in vm.blogs | filter:Blog_Input" ui-sref="blogs.view({ blogId: blog._id })" class="list-group-item">
     <small class="list-group-item-text">
@@ -24,6 +25,7 @@
     </small>
     <h4 class="list-group-item-heading" ng-bind="blog.name"></h4>
   </a>
+</div>
 </div>
 
 <!-- In case there are no blog entries-->

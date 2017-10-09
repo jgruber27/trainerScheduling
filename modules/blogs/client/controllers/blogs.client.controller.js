@@ -20,7 +20,7 @@
 
     $scope.trustSrc = function(src) {
       return $sce.trustAsResourceUrl(src);
-    }
+    };
     // Remove existing Blog
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {

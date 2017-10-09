@@ -35,3 +35,8 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+.scroll {
+  width: 1150px;
+  height: 750px;
+  overflow: auto;
+}

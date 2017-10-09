@@ -21,7 +21,7 @@ var BlogSchema = new Schema({
     default: '',
     trim: true
   },
-    video: {
+  video: {
     type: String,
     default: '',
     trim: true
