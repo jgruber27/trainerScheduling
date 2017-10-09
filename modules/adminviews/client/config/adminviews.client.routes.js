@@ -23,6 +23,15 @@
           pageTitle: 'Adminviews List'
         }
       })
+      .state('adminviews.main_view', {
+        url: '/main',
+        templateUrl: 'modules/adminviews/client/views/main-view-adminview.client.view.html',
+        controller: 'AdminviewsController',
+        controllerAs: 'vm',
+        data: {
+          pageTitle: 'Adminviews Main'
+        }
+      })
       .state('adminviews.create', {
         url: '/create',
         templateUrl: 'modules/adminviews/client/views/form-adminview.client.view.html',
@@ -60,19 +69,6 @@
         data: {
           pageTitle: 'Adminview {{ adminviewResolve.name }}'
         }
-      })
-      // Add state for my main admin view
-      .state('adminviews.main_view', {
-          url: '/main',
-          templateUrl: 'modules/adminviews/client/views/main-view-adminview.client.view.html',
-          controller: 'AdminviewsController',
-          controllerAs: 'vm',
-          resolve: {
-              adminviewResolve: getAdminview
-          },
-          data: {
-              pageTitle: 'Adminview {{ adminviewResolve.name }}'
-          }
       });
   }
 
