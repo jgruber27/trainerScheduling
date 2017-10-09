@@ -18,7 +18,7 @@
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'staffviews', {
-      title: 'List Staffviews',
+      title: 'Staff Main',
       state: 'staffviews.list'
     });
 
