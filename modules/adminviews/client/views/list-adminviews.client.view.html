@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Adminviews</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="adminview in vm.adminviews"
+       ui-sref="adminviews.view({ adminviewId: adminview._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="adminview.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="adminview.user" ng-bind="adminview.user.displayName"></span>
+        <span ng-if="!adminview.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="adminview.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.adminviews.$resolved && !vm.adminviews.length">
+    No Adminviews yet, why don't you <a ui-sref="adminviews.create">create one</a>?
+  </div>
+</section>

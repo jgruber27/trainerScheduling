@@ -28,6 +28,7 @@ gulp.task('env:test', function () {
 // Set NODE_ENV to 'development'
 gulp.task('env:dev', function () {
   process.env.NODE_ENV = 'development';
+  process.env.MONGOLAB_URI= 'mongodb://japanglais:iTzmai@ds161164.mlab.com:61164'
 });
 
 // Set NODE_ENV to 'production'
