@@ -36,6 +36,15 @@ a:hover .header-profile-image {
   display: inline;
 }
 
+<<<<<<< HEAD
+=======
+.scroll {
+  width: 1150px;
+  height: 750px;
+  overflow: auto;
+}
+
+>>>>>>> 84e5a2df47f7c1d1960bb67dfc972545dc3b87b9
 .navbar-custom {
     background-color:#672C8E;
     color:#ffffff;
@@ -108,4 +117,8 @@ a:hover .header-profile-image {
   background-color: #F26524;
   border-radius: 5px;
 }
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> 84e5a2df47f7c1d1960bb67dfc972545dc3b87b9

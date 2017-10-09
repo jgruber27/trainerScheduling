@@ -26,6 +26,22 @@
         <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
       </li>
     </ul>
+<<<<<<< HEAD
+=======
+    <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
+      <li ui-sref-active="active">
+        <a ui-sref="authentication.signup">Sign Up</a>
+      </li>
+      <li class="divider-vertical"></li>
+      <li ui-sref-active="active">
+        <a ui-sref="authentication.signin">Sign In</a>
+      </li>
+      <li class="divider-vertical"></li>
+      <li ui-sref-active="active">
+        <a ui-sref="trainer">Trainer App</a>
+      </li>
+    </ul>
+>>>>>>> 84e5a2df47f7c1d1960bb67dfc972545dc3b87b9
     <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
       <li class="dropdown" dropdown>
         <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
