@@ -28,5 +28,12 @@
       state: 'adminviews.create',
       roles: ['user']
     });
+
+      // Add the dropdown My Admin View
+      menuService.addSubMenuItem('topbar', 'adminviews', {
+          title: 'My Main Admin View',
+          state: 'adminviews.main_view',
+          roles: ['user']
+      });
   }
 }());
