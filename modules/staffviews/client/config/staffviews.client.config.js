@@ -28,5 +28,11 @@
       state: 'staffviews.create',
       roles: ['user']
     });
+
+    menuService.addSubMenuItem('topbar', 'staffviews', {
+      title: 'Something',
+      state: 'staffviews.requestoff',
+      roles: ['user']
+    });
   }
 }());
