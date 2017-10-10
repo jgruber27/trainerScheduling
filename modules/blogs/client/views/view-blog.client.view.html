@@ -23,4 +23,5 @@
     </em>
   </small>
   <p class="lead" ng-bind="vm.blog.content"></p>
+  <iframe ng-if="vm.blog.video" style="margin-left: 250px" height="400" width="600" ng-src="{{trustSrc(vm.blog.video)}}" allowfullscreen></iframe>
 </section>

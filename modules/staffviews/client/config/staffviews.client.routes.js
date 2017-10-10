@@ -36,6 +36,32 @@
           pageTitle: 'Staffviews Create'
         }
       })
+      .state('staffviews.requestoff', {
+        url: '/requestoff',
+        templateUrl: 'modules/staffviews/client/views/requestoff-staffview.client.view.html',
+        controller: 'StaffviewsController',
+        controllerAs: 'vm',
+        resolve: {
+          staffviewResolve: newStaffview
+        },
+        data: {
+          roles: ['user', 'admin'],
+          pageTitle: 'Staffviews Create'
+        }
+      })
+      .state('staffviews.availability', {
+        url: '/availability',
+        templateUrl: 'modules/staffviews/client/views/availability-staffview.client.view.html',
+        controller: 'StaffviewsController',
+        controllerAs: 'vm',
+        resolve: {
+          staffviewResolve: newStaffview
+        },
+        data: {
+          roles: ['user', 'admin'],
+          pageTitle: 'Staffviews Create'
+        }
+      })
       .state('staffviews.edit', {
         url: '/:staffviewId/edit',
         templateUrl: 'modules/staffviews/client/views/form-staffview.client.view.html',
@@ -61,6 +87,8 @@
           pageTitle: 'Staffview {{ staffviewResolve.name }}'
         }
       });
+
+
   }
 
   getStaffview.$inject = ['$stateParams', 'StaffviewsService'];
