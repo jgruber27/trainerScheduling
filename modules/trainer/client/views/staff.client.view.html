@@ -1,14 +1,6 @@
-<section>
-
-	<div>
-  This is the Trainer view
-</div>
-<div ui-sref="blog">Blog</div>
-</section>
-
 <!--
 
-Allegiance Athletics 
+Allegiance Athletics
 
 -->
 
@@ -27,6 +19,8 @@ Allegiance Athletics
     <!-- Bootstrap core CSS -->
 <!--     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
     <style>
@@ -35,13 +29,58 @@ Allegiance Athletics
       }
       @media (min-width: 992px) {
         body {
-          
+
         }
       }
 
       .nav-item {
         text-transform: uppercase;
       }
+
+      /* Sidebar */
+      #sidebar-wrapper {
+          z-index: 1;
+          position: absolute;
+          right: 0;
+          width: 0;
+          height: 100%;
+          overflow-y: hidden;
+          background: #7B5E8B;
+          opacity: 0.9;
+      }
+
+      /* Always take up entire screen */
+      #page-content-wrapper {
+          width: 100%;
+          position: static;
+          padding: 15px;
+      }
+
+      #wrapper.menuDisplayed #sidebar-wrapper {
+          position: absolute;
+          width: 300px;
+      }
+
+      .sidebar-nav {
+          padding: 0;
+          list-style: none;
+      }
+
+      .sidebar-nav li {
+          text-indent: 20px;
+          line-height: 40px;
+      }
+
+      .sidebar-nav li a {
+          display: block;
+          text-decoration: none;
+          color: #ddd;
+      }
+
+      .sidebar-nav li a:hover {
+          background: #AC6E44;
+      }
+
 
     </style>
 
@@ -76,34 +115,53 @@ Allegiance Athletics
               <a class="btn navbar-btn" style="background-color: #F26524; color: #FFFFFF;" href="#">Login</a>
           </ul>
         </div>
-      </div>
+
     </nav>
 
-    <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h1 class="mt-5">Allegiance Athletics</h1>
-          <p class="lead">Web Application Under Contruction!</p>
-          <ul class="list-unstyled">
-            <li>Needs Editing</li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript -->
-<!--     <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
- -->
+    <!-- staffs content -->
+    <div class="container">
+
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li><a href="#">Availability</a></li>
+                    <li><a href="#">Schedule</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Request Off</a></li>
+                </ul>
+            </div>
+
+            <!-- Page content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <a href="#" class="btn btn-success" id="menu-toggle">
+                            <i class="fa fa-bars fa-lg" aria-hidden="true"> </i> Staff
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Menu toggle script -->
+        <script>
+            $("#menu-toggle").click( function (e){
+                e.preventDefault();
+                $("#wrapper").toggleClass("menuDisplayed");
+            });
+        </script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
+
+    </script>
 
   </body>
 
 </html>
-</section>
-
