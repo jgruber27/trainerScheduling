@@ -13,7 +13,7 @@
       title: 'Admin View',
       state: 'adminviews',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['admin']
     });
 
     // // Add the dropdown list item
@@ -32,7 +32,7 @@
     menuService.addSubMenuItem('topbar', 'adminviews', {
       title: 'My Main Admin View',
       state: 'adminviews.main_view',
-      roles: ['user']
+      roles: ['admin']
     });
   }
 }());

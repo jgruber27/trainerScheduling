@@ -215,10 +215,10 @@
     function creates() {
       alert('hi');
 
-      var fs = require('fs'),
-        readline = require('readline'),
-        google = require('googleapis'),
-        googleAuth = require('google-auth-library');
+      var Fs = require('fs'),
+        Readline = require('readline'),
+        Google = require('googleapis'),
+        GoogleAuth = require('google-auth-library');
 
       // If modifying these scopes, delete your previously saved credentials
       // at ~/.credentials/calendar-nodejs-quickstart.json
@@ -227,7 +227,7 @@
       var TOKEN_PATH = TOKEN_DIR + 'calendar-nodejs-quickstart.json';
 
       // Load client secrets from a local file.
-      fs.readFile('client_secret.json', function processClientSecrets(err, content) {
+      Fs.readFile('client_secret.json', function processClientSecrets(err, content) {
         if (err) {
           console.log('Error loading client secret file: ' + err);
           return;
@@ -248,11 +248,11 @@
         var clientSecret = credentials.installed.client_secret;
         var clientId = credentials.installed.client_id;
         var redirectUrl = credentials.installed.redirect_uris[0];
-        var auth = new googleAuth();
+        var auth = new GoogleAuth();
         var oauth2Client = new auth.OAuth2(clientId, clientSecret, redirectUrl);
 
         // Check if we have previously stored a token.
-        fs.readFile(TOKEN_PATH, function(err, token) {
+        Fs.readFile(TOKEN_PATH, function(err, token) {
           if (err) {
             getNewToken(oauth2Client, callback);
           } else {
@@ -271,9 +271,9 @@
          *     client.
          */
       function getNewToken(oauth2Client, callback) {
-        var authUrl = oauth2Client.generateAuthUrl({access_type: 'offline', scope: SCOPES});
+        var authUrl = oauth2Client.generateAuthUrl({ access_type: 'offline', scope: SCOPES });
         console.log('Authorize this app by visiting this url: ', authUrl);
-        var rl = readline.createInterface({input: process.stdin, output: process.stdout});
+        var rl = Readline.createInterface({ input: process.stdin, output: process.stdout });
         rl.question('Enter the code from that page here: ', function(code) {
           rl.close();
           oauth2Client.getToken(code, function(err, token) {
@@ -295,13 +295,13 @@
          */
       function storeToken(token) {
         try {
-          fs.mkdirSync(TOKEN_DIR);
+          Fs.mkdirSync(TOKEN_DIR);
         } catch (err) {
-          if (err.code != 'EEXIST') {
+          if (err.code !== 'EEXIST') {
             throw err;
           }
         }
-        fs.writeFile(TOKEN_PATH, JSON.stringify(token));
+        Fs.writeFile(TOKEN_PATH, JSON.stringify(token));
         console.log('Token stored to ' + TOKEN_PATH);
       }
 
@@ -311,7 +311,7 @@
          * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
          */
       function listEvents(auth) {
-        var calendar = google.calendar('v3');
+        var calendar = Google.calendar('v3');
         calendar.events.list({
           auth: auth,
           calendarId: 'primary',
@@ -325,7 +325,7 @@
             return;
           }
           var events = response.items;
-          if (events.length == 0) {
+          if (events.length === 0) {
             console.log('No upcoming events found.');
           } else {
             console.log('Upcoming 10 events:');
@@ -362,7 +362,7 @@
       }
 
       function successCallback(res) {
-        $state.go('schedules.view', {scheduleId: res._id});
+        $state.go('schedules.view', { scheduleId: res._id });
       }
 
       function errorCallback(res) {

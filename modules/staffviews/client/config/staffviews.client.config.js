@@ -13,7 +13,7 @@
       title: 'Staffviews',
       state: 'staffviews',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user', 'admin']
     });
 
     // Add the dropdown list item
