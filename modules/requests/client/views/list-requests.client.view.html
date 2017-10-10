@@ -26,7 +26,7 @@ h2{text-align:center;}
         <th>Class Type</th>
         <th>Reason</th>
       </tr>
-      <tr ng-repeat="request in vm.requests"  ui-sref="requests.view({ requestId: request._id })">
+      <tr ng-repeat="request in vm.requests"  ui-sref="requests.view({ requestId: request._id })" style="cursor: pointer;">
       <a >
       <td>
       {{request.name}}
