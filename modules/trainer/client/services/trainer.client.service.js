@@ -1,21 +1,23 @@
+
+// Schedules service used to communicate Schedules REST endpoints
 (function () {
   'use strict';
 
   angular
     .module('trainer')
-    .factory('trainerService', trainerService);
+    .factory('TrainerService', TrainerService);
 
-  trainerService.$inject = [/*Example: '$state', '$window' */];
+  TrainerService.$inject = ['$resource'];
 
-  function trainerService(/*Example: $state, $window */) {
-    // Trainer service logic
-    // ...
-
-    // Public API
-    return {
-      someMethod: function () {
-        return true;
+  function TrainerService($resource) {
+    return $resource('api/schedules/:scheduleId', {
+      scheduleId: '@_id'
+    }, {
+      update: {
+        method: 'PUT'
       }
-    };
+    });
   }
-})();
+
+
+}());
