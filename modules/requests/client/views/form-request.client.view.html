@@ -7,7 +7,7 @@
     <form name="vm.form.requestForm" class="form-horizontal" ng-submit="vm.save(vm.form.requestForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Request Type (Example: Time Off)</label>
+          <label class="control-label" for="name">Request Type (Example : Time Off)</label>
           <input name="name" type="text" ng-model="vm.request.name" id="name" class="form-control" placeholder="Request Name" required>
           <div ng-messages="vm.form.requestForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Request name is required.</p>
