@@ -9,12 +9,12 @@
 
   function TrainerController($scope) {
     var vm = this;
-    $scope.announcements{
-      $scope.dateAdded = "",
-      $scope.name = "",
-      $scope.title = "",
-      $scope.announcement = ""
-    }
+    // $scope.announcements{
+    //   $scope.dateAdded = "",
+    //   $scope.name = "",
+    //   $scope.title = "",
+    //   $scope.announcement = ""
+    // }
     // Trainer controller logic
     // ...
 
@@ -24,7 +24,7 @@
     }
 
 
-    function createAnnouncement($scope, title, announcement){
+    function createAnnouncement(title, announcement, $scope){
       $scope.announcements.name = name;
       $scope.announcements.dateAdded = new Date();
       $scope.announcements.titles = title;
