@@ -29,7 +29,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
     })
     .state('forbidden', {
       url: '/forbidden',
-      templateUrl: 'modules/core/client/views/403.client.view.html',
+      templateUrl: 'modules/core/client/views/NotLoggedIn.client.view.html',
       data: {
         ignoreState: true
       }
