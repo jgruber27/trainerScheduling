@@ -36,6 +36,12 @@ a:hover .header-profile-image {
   display: inline;
 }
 
+.scroll {
+  width: 1150px;
+  height: 750px;
+  overflow: auto;
+}
+
 .navbar-custom {
     background-color:#672C8E;
     color:#ffffff;
