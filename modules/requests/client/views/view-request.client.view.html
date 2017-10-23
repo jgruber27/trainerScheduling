@@ -1,15 +1,56 @@
 <section>
   <div class="page-header">
+  <style>
+h1{text-align:center;}
+</style>
     <h1 ng-bind="vm.request.name"></h1>
+  </div>
+    <div class="listOfReq" >
+  <table class="table table-striped table-hover">
+      <tr style="background-color:lightblue;">
+        <th>Request</th>
+        <th>Name</th>
+        <th>Shift Time</th>
+        <th>Date Requested</th>
+        <th>Class Type</th>
+        <th>Reason</th>
+      </tr>
+      <tr>
+      <a >
+      <td>
+      {{vm.request.name}}
+      </td>
+      <td>  
+          <span ng-if="vm.request.user" ng-bind="vm.request.user.displayName"></span>
+          <span ng-if="!vm.request.user">Deleted User</span>
+      </td>
+      <td>
+          {{vm.request.shiftTime}}
+      </td>
+      <td>
+          <span ng-bind="vm.request.created | date:'mediumDate'"></span>
+      </td>
+      <td>
+      {{vm.request.class}}
+      </td>
+      <td>
+      {{vm.request.reason}}
+      </td>
+      </a>
+    </tr>
+  </table>
   </div>
   <div class="pull-right"
        ng-show="vm.request.isCurrentUserOwner">
-    <a class="btn btn-primary"
+    <!--a class="btn btn-primary"
        ui-sref="requests.edit({ requestId: vm.request._id })">
       <i class="glyphicon glyphicon-edit"></i>
+    </a-->
+  <a class="btn btn-primary" ng-click="vm.removeAndGoToCalendar()">
+     Accept Request and Go to Calendar <i class="glyphicon glyphicon-check"></i>
     </a>
     <a class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
+     Decline and Delete Request <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
   <small>

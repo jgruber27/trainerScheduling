@@ -16,12 +16,18 @@
     vm.error = null;
     vm.form = {};
     vm.remove = remove;
+    vm.removeAndGoToCalendar = removeAndGoToCalendar;
     vm.save = save;
-
     // Remove existing Request
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('Are you sure you want to decline and delete this request?')) {
         vm.request.$remove($state.go('requests.list'));
+      }
+    }
+
+    function removeAndGoToCalendar() {
+      if ($window.confirm('Are you sure you want to accept this request and go to calendar?')) {
+        vm.request.$remove($state.go('schedules.list'));
       }
     }
 
@@ -48,6 +54,7 @@
       function errorCallback(res) {
         vm.error = res.data.message;
       }
+
     }
   }
 }());

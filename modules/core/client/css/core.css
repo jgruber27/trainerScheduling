@@ -36,6 +36,12 @@ a:hover .header-profile-image {
   display: inline;
 }
 
+.scroll {
+  width: 1150px;
+  height: 750px;
+  overflow: auto;
+}
+
 .navbar-custom {
     background-color:#672C8E;
     color:#ffffff;
@@ -74,4 +80,42 @@ a:hover .header-profile-image {
 }
 .navbar-custom .icon-bar {
     background-color: #33aa33;
+<<<<<<< HEAD
 }
+=======
+}
+/*
+.navbar-custom .navbar-btn {
+    background-color: #F26524;
+    padding: 6px 15px 6px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.navbar-custom .navbar-nav .navbar-btn > .active > a:hover,
+.navbar-custom .navbar-nav .navbar-btn > .active > a:focus,
+.navbar-custom .navbar-nav .navbar-btn > .open >a {
+    text-decoration: none;
+    background-color: #F26524;
+}
+*/
+/*.navbar-custom {
+  background-color: #672C8E;
+  color: #FFFFFF;
+}
+
+.navbar-custom a {
+  color: #FFFFFF;
+}
+
+.navbar-custom a:hover {
+  color: #F26524;
+  padding: 0px;
+}
+
+.navbar-custom .navbar-btn {
+  padding: 5px 20px 5px 20px;
+  background-color: #F26524;
+  border-radius: 5px;
+}
+>>>>>>> 2c90fef8afc5583d6c8b3b9ded20abe353682260
