@@ -1,25 +1,55 @@
 <section>
-  <h1>Availability</h1>
-<div class="">
-  <select name="days">
-    <option value="Days">Days</option>
-    <option value="Monday">Monday</option>
-    <option value="Tuesday">Tuesday</option>
-    <option value="Wednesday">Wednesday</option>
-    <option value="Thursday">Thursday</option>
-  </select>
-
-  <div class="">
-    <form>
-        <input type = "checkbox" name = "hours" value = "on"> 8:00am
-        <input type = "checkbox" name = "hours" value = "on"> 8:30am
-     </form>    
+  <div class="page-header">
+    <h1>{{vm.staffview._id ? 'Edit Staffview' : 'Availability'}}</h1>
   </div>
 
-   <div class="">
-     <button type="submit" class="btn btn-default">Submit</button>
-   </div>
+  <h1>Monday</h1>
+  <div class="col-md-6 ">
+    <form name="vm.form.staffviewForm" class="form-horizontal" ng-submit="vm.save(vm.form.staffviewForm.$valid)" novalidate>
+      <fieldset>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group" show-errors>
+                <label class="control-label" for="mondayFrom">Start</label>
+                <select name="mondayFrom" ng-model="vm.staffview.mondayFrom" id="mondayFrom" class="form-control" placeholder="mondayFrom" required>
+                  <option value="">Select</option>
+                  <option value="0000">00:00</option>
+                  <option value="0100">01:00</option>
+                  <option value="0200">02:00</option>
+                  <option value="0300">03:00</option>
+                  <option value="0400">04:00</option>
+                  <option value="0500">05:00</option>
+                  <option value="0600">06:00</option>
+                  <option value="0700">07:00</option>
+                </select>
+              </div>
+            </div>
+          <div class="col-sm-3">
+            <div class="form-group" show-errors>
+              <label class="control-label" for="mondayTo">Finish</label>
+              <select name="mondayTo" ng-model="vm.staffview.mondayTo" id="mondayTo" class="form-control" placeholder="mondayTo" required>
+                <option value="">Select</option>
+                <option value="0000">00:00</option>
+                <option value="0100">01:00</option>
+                <option value="0200">02:00</option>
+                <option value="0300">03:00</option>
+                <option value="0400">04:00</option>
+                <option value="0500">05:00</option>
+                <option value="0600">06:00</option>
+                <option value="0700">07:00</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
-
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.staffview._id ? 'Update' : 'Update'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
 </div>
 </section>

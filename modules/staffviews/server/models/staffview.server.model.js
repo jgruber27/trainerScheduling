@@ -10,10 +10,14 @@ var mongoose = require('mongoose'),
  * Staffview Schema
  */
 var StaffviewSchema = new Schema({
-  name: {
+  mondayFrom: {
     type: String,
     default: '',
-    required: 'Please fill Staffview name',
+    trim: true
+  },
+  mondayTo: {
+    type: String,
+    default: '',
     trim: true
   },
   created: {
