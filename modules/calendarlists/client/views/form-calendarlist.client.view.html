@@ -12,6 +12,8 @@
             <p class="help-block error-text" ng-message="required">Calendarlist name is required.</p>
           </div>
           <label class="control-label" for="trainer">Trainer</label>
+          <select ng-model="User" ng-options="x for x in User">
+          </select>
           <input name="trainer" type="" ng-model="vm.calendarlist.trainer" id="trainer" class="form-control" placeholder="Trainer" required>
           <div ng-messages="vm.form.calendarlistForm.trainer.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Calendarlist trainer is required.</p>

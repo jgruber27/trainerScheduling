@@ -18,6 +18,7 @@
     vm.remove = remove;
     vm.save = save;
 
+    $scope.User = ["hi","lol"];
     // Remove existing Calendarlist
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
