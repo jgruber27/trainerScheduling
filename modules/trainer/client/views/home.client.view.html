@@ -21,10 +21,10 @@
       <div class="row" style="background-color:white; width: auto ; height: 600px; border: 1px solid black; margin: 10px;">
         <h3 style="color:white; background-color:#672C8E; text-align: center; margin: 0px; padding: 12px;">Announcements</h3>
         
-        <div id="cc-homepage-announcements" ng-repeat="announcements in vm.trainer">
-          <h2> {{announcements.name}} </h2>
-          <p>{{announcemnets.announcement}}</p>
-          Posted on {{announcements.created}} by -{{announcements.user}}- 
+        <div id="cc-homepage-announcements">
+          <h2> <span ng-bind="vm.trainer.name"></span></h2>
+          <p><span ng-bind="vm.trainer.announcement"></span></p>
+          Posted on --<span ng-bind="vm.trainer.created"></span> by --<span ng-bind="vm.trainer.user"></span>
         </div>
       </div>
     </div>
