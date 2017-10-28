@@ -15,61 +15,24 @@
       </p>
     </div>
     
-    <div class="row">
-      <p>
-        <a class="btn btn-primary btn-lg" href="authentication/signin" target="_blank">Log In</a>
-      </p>
-    </div>
-
+   
     <div>
       <div class="row" style="background-color:white; width: auto ; height: 600px; border: 1px solid black; margin: 10px;">
         <h3 style="color:white; background-color:#672C8E; text-align: center; margin: 0px; padding: 12px;">Announcements</h3>
         
         <div class ="announcementList" id="cc-homepage-announcements" ng-repeat="announcements in vm.trainer"> 
-          <h2> {{trainer.name}} </h2>
-          <p>{{trainer.announcement}}</p>
-          Posted on {{trainer.created}} by -{{trainer.user}}- 
+          <h2> {{announcements.name}} </h2>
+          <p>{{announcemnets.announcement}}</p>
+          Posted on {{announcements.created}} by -{{announcements.user}}- 
         </div>
       </div>
     </div>
-    <!--
-      <div class="listOfReq" >
-  <table class="table table-striped table-hover">
-      <tr style="background-color:lightblue;">
-        <th>Request</th>
-        <th>Name</th>
-        <th>Shift Time</th>
-        <th>Date Requested</th>
-        <th>Class Type</th>
-        <th>Reason</th>
-      </tr>
-      <tr ng-repeat="request in vm.requests"  ui-sref="requests.view({ requestId: request._id })">
-      <a >
-      <td>
-      {{request.name}}
-      </td>
-      <td>  
-          <span ng-if="request.user" ng-bind="request.user.displayName"></span>
-          <span ng-if="!request.user">Deleted User</span>
-      </td>
-      <td>
-          {{request.shiftTime}}
-      </td>
-      <td>
-          <span ng-bind="request.created | date:'mediumDate'"></span>
-      </td>
-      <td>
-      {{request.class}}
-      </td>
-      <td>
-      {{request.reason}}
-      </td>
-      </a>
-    </tr>
-  </table>
-  </div>
-  -->
 
+ <div class="row">
+      <p>
+        <a class="btn btn-primary btn-lg" href="api/auth/signout" target="_blank">Log Out</a>
+      </p>
+    </div>
 
   <br>Enjoy &amp; Keep Us Updated,
   <br>Allegiance Athletics 
