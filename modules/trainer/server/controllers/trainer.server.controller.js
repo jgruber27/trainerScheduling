@@ -86,3 +86,27 @@ exports.list = function(req, res) {
     }
   });
 };
+
+/**
+ * Request middleware
+ */
+exports.requestByID = function(req, res, next, id) {
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).send({
+      message: 'Request is invalid'
+    });
+  }
+
+  Trainer.findById(id).populate('user', 'displayName').exec(function (err, trainer) {
+    if (err) {
+      return next(err);
+    } else if (!trainer) {
+      return res.status(404).send({
+        message: 'No Trainer with that identifier has been found'
+      });
+    }
+    req.trainer = trainer;
+    next();
+  });
+};

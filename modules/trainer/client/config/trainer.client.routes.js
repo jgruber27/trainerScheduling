@@ -38,6 +38,12 @@
         //   roles: ['admin']
         // }
       })
+      .state('NotLoggedIn', {
+        url: '/NotLoggedIn',
+        templateUrl: 'modules/trainer/client/views/NotLoggedIn.client.view.html',
+        controller: 'TrainerController',
+        controllerAs: 'vm'
+      })
       .state('createAnnouncement', {
         url: '/createAnnouncement',
         templateUrl: 'modules/trainer/client/views/createAnnouncement.client.view.html',

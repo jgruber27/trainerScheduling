@@ -5,17 +5,15 @@
     .module('trainer')
     .factory('trainerService', trainerService);
 
-  trainerService.$inject = [/*Example: '$state', '$window' */];
+  trainerService.$inject = ['$resource'];
 
-  function trainerService(/*Example: $state, $window */) {
-    // Trainer service logic
-    // ...
-
-    // Public API
-    return {
-      someMethod: function () {
-        return true;
+  function trainerService($resource) {
+    return $resource('api/trainer/:trainerId', {
+      requestId: '@_id'
+    }, {
+      update: {
+        method: 'PUT'
       }
-    };
+    });
   }
-})();
+}());
