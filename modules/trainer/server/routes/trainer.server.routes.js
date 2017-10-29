@@ -7,11 +7,11 @@ module.exports = function(app) {
   // Trainer Routes
   app.route('/api/trainer').all()
     .get(trainer.list)
-    .post(trainer.create)
+    .post(trainer.create);
 
 
 
-    app.route('/api/trainer/:trainerId').all()
+  app.route('/api/trainer/:trainerId').all()
     .get(trainer.read)
     .put(trainer.update)
     .delete(trainer.delete);
