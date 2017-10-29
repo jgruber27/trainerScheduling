@@ -1,5 +1,5 @@
 <section >
-  <div class="jumbotron text-center" ng-controller="TrainerController">
+  <div class="jumbotron text-center">
     
     <div class="row">
       <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
@@ -24,9 +24,11 @@
         </h3> 
 
         <div id="cc-homepage-announcements">
-          <h2> <span ng-bind="vm.trainer.name"></span></h2>
-          <p><span ng-bind="vm.trainer.announcement"></span></p>
-          Posted on --<span ng-bind="vm.trainer.created"></span> by --<span ng-bind="vm.trainer.user"></span>
+          <a ng-repeat="train in vm.trainer" class="list-group-item">
+          <h2> <span ng-bind="train.name"></span></h2>
+          <p><span ng-bind="train.announcement"></span></p>
+          Posted on --<span ng-bind="train.created"></span> by --<span ng-bind="train.user.name"></span>
+        </a>
         </div>
   </div>
     <div class="row">

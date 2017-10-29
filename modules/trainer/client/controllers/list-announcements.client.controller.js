@@ -5,12 +5,12 @@
     .module('trainer')
     .controller('TrainerListController', TrainerListController);
 
-  TrainerListController.$inject = ['TrainerService'];
+  TrainerListController.$inject = ['trainerService'];
 
-  function TrainerListController(TrainerService) {
+  function TrainerListController(trainerService) {
     var vm = this;
 
-    vm.trainer = TrainerService.query();
+    vm.trainer = trainerService.query();
   }
 
 }());

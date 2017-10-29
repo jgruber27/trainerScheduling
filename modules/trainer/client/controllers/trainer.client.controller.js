@@ -20,7 +20,7 @@
     // Remove existing Trainer
     function remove() {
       if ($window.confirm('Are you sure you want to decline and delete this announcement?')) {
-        vm.trainer.$remove($state.go('trainer.home'));
+        vm.trainer.$remove($state.go('home'));
       }
     }
 
@@ -39,7 +39,7 @@
       }
 
       function successCallback(res) {
-        $state.go('trainer.home', {
+        $state.go('home', {
           trainerId: res._id
         });
       }

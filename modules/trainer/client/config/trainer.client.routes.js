@@ -11,19 +11,10 @@
   function routeConfig($stateProvider) {
     // Trainer state routing
     $stateProvider
-      .state('trainer', {
-        url: '/trainer',
-        templateUrl: 'modules/trainer/client/views/trainer.client.view.html',
-        controller: 'TrainerController',
-        controllerAs: 'vm'
-        // data: {
-        //   roles: ['user', 'admin']
-        // }
-      })
       .state('home', {
         url: '/',
         templateUrl: 'modules/trainer/client/views/home.client.view.html',
-        controller: 'TrainerController',
+        controller: 'TrainerListController',
         controllerAs: 'vm'
         // data: {
         //   roles: ['user', 'admin']
@@ -32,7 +23,7 @@
       .state('homeadmin', {
         url: '/homeadmin',
         templateUrl: 'modules/trainer/client/views/homeadmin.client.view.html',
-        controller: 'TrainerController',
+        controller: 'TrainerListController',
         controllerAs: 'vm'
         // data: {
         //   roles: ['admin']
@@ -48,25 +39,28 @@
         url: '/createAnnouncement',
         templateUrl: 'modules/trainer/client/views/createAnnouncement.client.view.html',
         controller: 'TrainerController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        resolve: {
+          trainerResolve: newTrainer
+        }
         // data: {
         //   roles: ['admin']
         // }
       });
 
   }
-  getTrainer.$inject = ['$stateParams', 'TrainerService'];
+  getTrainer.$inject = ['$stateParams', 'trainerService'];
 
-  function getTrainer($stateParams, TrainerService) {
-    return TrainerService.get({
-      TrainerId: $stateParams.TrainerId
+  function getTrainer($stateParams, trainerService) {
+    return trainerService.get({
+      trainerId: $stateParams.trainerId
     }).$promise;
   }
 
-  newTrainer.$inject = ['TrainerService'];
+  newTrainer.$inject = ['trainerService'];
 
-  function newTrainer(TrainerService) {
-    return new TrainerService();
+  function newTrainer(trainerService) {
+    return new trainerService();
   }
 }());
 
