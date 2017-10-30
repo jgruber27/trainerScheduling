@@ -11,13 +11,14 @@ var mongoose = require('mongoose'),
  */
 var AvailabilitySchema = new Schema({
   monday: {
-    value1: { type: Boolean, required: false, default: false },
-    value2: { type: Boolean, required: false, default: false },
+    value1: { type: Boolean, required: false, default: false }, //7am
+    value2: { type: Boolean, required: false, default: false }, //8am
+    value2: { type: Boolean, required: false, default: false }, //9am
   },
   tuesday: {
-    type: String,
-    default: '',
-    trim: true
+    value1: { type: Boolean, required: false, default: false }, //7am
+    value2: { type: Boolean, required: false, default: false }, //8am
+    value2: { type: Boolean, required: false, default: false }, //9am
   },
   created: {
     type: Date,

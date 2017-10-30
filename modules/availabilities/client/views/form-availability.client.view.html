@@ -2,16 +2,34 @@
   <div class="page-header">
     <h1>{{vm.availability._id ? 'Edit Availability' : 'New Availability'}}</h1>
   </div>
-  <div class="col-md-12">
-    <form name="vm.form.availabilityForm" class="form-horizontal" ng-submit="vm.save(vm.form.availabilityForm.$valid)" novalidate>
-      <fieldset>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+      <form name="vm.form.availabilityForm" class="form-horizontal" ng-submit="vm.save(vm.form.availabilityForm.$valid)" novalidate>
+        <fieldset>
+          <div class="form-group" show-errors>
+            <label class="control-label" for="monday">Monday</label>
+            <!-- <input name="monday" type="text" ng-model="vm.availability.monday.value1" id="monday" class="form-control" placeholder="Monday" required> -->
+              <div class="mondayCheckboxes">
+                <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.value1"> 7:00 am</label>
+              </div>
+              <div class="">
+                <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.value2"> 8:00 am</label>
+              </div>
+          </div>
+
         <div class="form-group" show-errors>
-          <label class="control-label" for="monday">Monday</label>
-          <input name="monday" type="text" ng-model="vm.availability.monday.value1" id="monday" class="form-control" placeholder="Monday" required>
-            <div class="mondayCheckboxes">
-              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.value1"> 7:00 am</label>
+          <label class="control-label" for="monday">Tuesday</label>
+          <!-- <input name="tuesday" type="text" ng-model="vm.availability.tuesday.value1" id="tuesday" class="form-control" placeholder="Tuesday"> -->
+            <div class="tuesdayCheckboxes">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.tuesday.value1"> 7:00 am</label>
+            </div>
+            <div class="">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.tuesday.value2"> 8:00 am</label>
             </div>
         </div>
+
+
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.availability._id ? 'Update' : 'Create'}}</button>
         </div>
@@ -20,5 +38,7 @@
         </div>
       </fieldset>
     </form>
+  </div>
+  </div>
   </div>
 </section>

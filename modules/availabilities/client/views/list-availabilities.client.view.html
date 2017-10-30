@@ -86,13 +86,23 @@ border-radius: 5px;
 <tbody>
   <tr ng-repeat="availability in vm.availabilities"  ui-sref="availabilities.view({ availabilityId: availability._id })">
   <td>7:00 am</td>
-  <td>{{availability.monday.value1}}</td>
-  <td>cell3_1</td>
-  <td>cell4_1</td>
+  <td>{{availability.monday.value1}}</td> <!-- Monday 7am -->
+  <td>{{availability.monday.value2}}</td> <!-- Tuesday 8am -->
+  <td>{{availability.monday.value3}}</td> <!-- Wednesday 9am -->
   <td>cell5_1</td>
   <td>cell6_1</td>
   <td>cell7_1</td>
   <td>cell7_1</td>
+</tr>
+<tr ng-repeat="availability in vm.availabilities"  ui-sref="availabilities.view({ availabilityId: availability._id })">
+<td>7:00 am</td>
+<td>{{availability.tuesday.value1}}</td>
+<td>{{availability.tuesday.value2}}</td>
+<td>cell4_1</td>
+<td>cell5_1</td>
+<td>cell6_1</td>
+<td>cell7_1</td>
+<td>cell7_1</td>
 </tr>
 </tbody>
 </table>
