@@ -1,0 +1,102 @@
+<!-- <section>
+  <div class="page-header">
+    <h1>Availabilities</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="availability in vm.availabilities"
+       ui-sref="availabilities.view({ availabilityId: availability._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="availability.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="availability.user" ng-bind="availability.user.displayName"></span>
+        <span ng-if="!availability.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="availability.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.availabilities.$resolved && !vm.availabilities.length">
+    No Availabilities yet, why don't you <a ui-sref="availabilities.create">create one</a>?
+  </div>
+</section> -->
+<section>
+<style>
+table.blueTable {
+font-family: Arial, Helvetica, sans-serif;
+border: 0px solid #1C6EA4;
+background-color: #EEEEEE;
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+table.blueTable td, table.blueTable th {
+border: 1px solid #AAAAAA;
+padding: 3px 2px;
+}
+table.blueTable tbody td {
+font-size: 13px;
+}
+table.blueTable tr:nth-child(even) {
+background: #D0E4F5;
+}
+table.blueTable thead {
+background: #EDB664;
+background: -moz-linear-gradient(top, #f1c88b 0%, #eebd73 66%, #EDB664 100%);
+background: -webkit-linear-gradient(top, #f1c88b 0%, #eebd73 66%, #EDB664 100%);
+background: linear-gradient(to bottom, #f1c88b 0%, #eebd73 66%, #EDB664 100%);
+border-bottom: 2px solid #444444;
+}
+table.blueTable thead th {
+font-size: 15px;
+font-weight: bold;
+color: #000000;
+text-align: center;
+}
+table.blueTable tfoot td {
+font-size: 14px;
+}
+table.blueTable tfoot .links {
+text-align: right;
+}
+table.blueTable tfoot .links a{
+display: inline-block;
+background: #1C6EA4;
+color: #FFFFFF;
+padding: 2px 8px;
+border-radius: 5px;
+}
+</style>
+
+<h1>Availability</h1>
+
+<table class="blueTable">
+<thead>
+<tr>
+  <th></th>
+  <th>Monday</th>
+  <th>Tuesday</th>
+  <th>Wednesday</th>
+  <th>Thursday</th>
+  <th>Friday</th>
+  <th>Saturday</th>
+  <th>Sunday</th>
+</tr>
+</thead>
+<tbody>
+  <tr ng-repeat="availability in vm.availabilities"  ui-sref="availabilities.view({ availabilityId: availability._id })">
+  <td>7:00 am</td>
+  <td>{{availability.monday.value1}}</td>
+  <td>cell3_1</td>
+  <td>cell4_1</td>
+  <td>cell5_1</td>
+  <td>cell6_1</td>
+  <td>cell7_1</td>
+  <td>cell7_1</td>
+</tr>
+</tbody>
+</table>
+
+
+
+</section>
