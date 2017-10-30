@@ -1,13 +1,11 @@
 exports.config = {
-    seleniumAddress: 'http://localhost:4444/wd/hub',
+  seleniumAddress: 'http://localhost:4444/wd/hub',
 
-    capabilities: {
-        'browserName': 'chrome'
-    },
+  capabilities: {
+    'browserName': 'chrome'
+  },
 
-    specs: ['requests.e2e.tests.js'],
+  specs: ['requests.e2e.tests.js'],
 
-    jasmineNodeOpts: {
-        showColors: true
-    }
+  jasmineNodeOpts: { showColors: true }
 };
