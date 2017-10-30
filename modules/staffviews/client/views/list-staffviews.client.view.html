@@ -20,7 +20,7 @@
         <span ng-if="staffview.user" ng-bind="staffview.user.displayName"></span>
         <span ng-if="!staffview.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="staffview.mondayFrom"></h4>
+      <h4 class="list-group-item-heading" ng-bind="staffview.monday.value1"></h4>
     </a>
   </div>
   <div class="col-md-9">
@@ -33,6 +33,12 @@
 
     <div >
       <button type="submit" class="btn btn-danger"><a class="staffselection" ui-sref="staffviews.requestoff">Request Off</a></button>
+    </div>
+
+
+    <h4 class="list-group-item-heading" ng-bind="staffview.monday.value1"></h4>
+
+
     </div>
 
     <!-- staffs content -->

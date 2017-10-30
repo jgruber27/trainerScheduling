@@ -3,53 +3,28 @@
     <h1>{{vm.staffview._id ? 'Edit Staffview' : 'Availability'}}</h1>
   </div>
 
-  <h1>Monday</h1>
-  <div class="col-md-6 ">
-    <form name="vm.form.staffviewForm" class="form-horizontal" ng-submit="vm.save(vm.form.staffviewForm.$valid)" novalidate>
-      <fieldset>
-          <div class="row">
-            <div class="col-sm-3">
-              <div class="form-group" show-errors>
-                <label class="control-label" for="mondayFrom">Start</label>
-                <select name="mondayFrom" ng-model="vm.staffview.mondayFrom" id="mondayFrom" class="form-control" placeholder="mondayFrom" required>
-                  <option value="">Select</option>
-                  <option value="0000">00:00</option>
-                  <option value="0100">01:00</option>
-                  <option value="0200">02:00</option>
-                  <option value="0300">03:00</option>
-                  <option value="0400">04:00</option>
-                  <option value="0500">05:00</option>
-                  <option value="0600">06:00</option>
-                  <option value="0700">07:00</option>
-                </select>
-              </div>
-            </div>
-          <div class="col-sm-3">
-            <div class="form-group" show-errors>
-              <label class="control-label" for="mondayTo">Finish</label>
-              <select name="mondayTo" ng-model="vm.staffview.mondayTo" id="mondayTo" class="form-control" placeholder="mondayTo" required>
-                <option value="">Select</option>
-                <option value="0000">00:00</option>
-                <option value="0100">01:00</option>
-                <option value="0200">02:00</option>
-                <option value="0300">03:00</option>
-                <option value="0400">04:00</option>
-                <option value="0500">05:00</option>
-                <option value="0600">06:00</option>
-                <option value="0700">07:00</option>
-              </select>
-            </div>
+  <div class="col-md-6">
+  <form name="vm.form.staffviewForm" class="form-horizontal" ng-submit="vm.save(vm.form.staffviewForm.$valid)" novalidate>
+    <fieldset>
+      <div class="form-group" show-errors>
+          <label class="control-label" for="monday">Monday (Example: 7:00am-12:00pm)</label>
+          <input name="monday" type="text" ng-model="vm.staffview.monday.value1" id="monday" class="form-control" placeholder="Monday Availability" required>
+          <div class="mondayCheckboxes">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.staffview.monday.value1"> 7:00 am</label>
           </div>
-        </div>
+      </div>
 
-        <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.staffview._id ? 'Update' : 'Update'}}</button>
-        </div>
-        <div ng-show="vm.error" class="text-danger">
-          <strong ng-bind="vm.error"></strong>
-        </div>
-      </fieldset>
-    </form>
+      <div class="form-group" show-errors>
+          <label class="control-label" for="tuesday">Tuesday (Example: 7:00am-12:00pm)</label>
+          <input name="tuesday" type="text" ng-model="vm.staffview.tuesday" id="tuesday" class="form-control" placeholder="Tuesday Availability" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-default">{{vm.staffview._id ? 'Update' : 'Update Availability'}}</button>
+      </div>
+      <div ng-show="vm.error" class="text-danger">
+        <strong ng-bind="vm.error"></strong>
+      </divs
+    </fieldset>
+  </form>
   </div>
-</div>
 </section>
