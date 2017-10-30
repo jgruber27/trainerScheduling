@@ -1,3 +1,6 @@
+<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
 <div class="container" ng-controller="HeaderController">
   <div class="navbar-header">
     <button class="navbar-toggle" type="button" ng-click="toggleCollapsibleMenu()">
@@ -12,7 +15,7 @@
     <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
       <li class="divider-vertical"></li>
       <li ui-sref-active="active">
-        <a ui-sref="authentication.signin" class="" style="background-color: #F26524;">Sign In</a>
+        <a ui-sref="authentication.signin" class="">Sign In</a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
