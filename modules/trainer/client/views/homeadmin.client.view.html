@@ -27,7 +27,7 @@
           <a ng-repeat="train in vm.trainer" class="list-group-item">
           <h2> <span ng-bind="train.name"></span></h2>
           <p><span ng-bind="train.announcement"></span></p>
-          Posted on --<span ng-bind="train.created"></span> by --<span ng-bind="train.user.name"></span>
+          Posted on <span ng-bind="train.created | date:'mediumDate'"></span> by <span ng-bind="train.user.firstName"></span> <span ng-bind="train.user.lastName"></span>
         </a>
         </div>
   </div>
