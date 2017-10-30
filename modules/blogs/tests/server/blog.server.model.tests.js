@@ -1,24 +1,30 @@
 'use strict';
-
 /**
  * Module dependencies.
  */
 var should = require('should'),
   mongoose = require('mongoose'),
-  User = mongoose.model('User'),
+  //User = mongoose.model('User', new mongoose.Schema()),
   Blog = mongoose.model('Blog');
 
 /**
  * Globals
  */
-var user,
-  blog;
+var blog, blog_id;
 
+blog = {
+  name: 'title',
+  content: 'content',
+  video: '',
+};
 /**
  * Unit tests
  */
 describe('Blog Model Unit Tests:', function() {
-  beforeEach(function(done) {
+
+  this.timeout(10000);
+
+  /*beforeEach(function(done) {
     user = new User({
       firstName: 'Full',
       lastName: 'Name',
@@ -34,34 +40,56 @@ describe('Blog Model Unit Tests:', function() {
         user: user
       });
 
-      done();
+      done();C:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\serverC:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\serverC:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\serverC:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\server
     });
-  });
+  });*/
 
-  describe('Method Save', function() {
-    it('should be able to save without problems', function(done) {
-      this.timeout(0);
-      return blog.save(function(err) {
+  describe('Saving a blog to the database', function(done) {
+    
+    this.timeout(10000);
+
+    it('should be able to save a new blog', function(done) {
+      new Blog({
+        name: 'title',
+        content: 'content',
+        video: '',
+      }).save(function(err){
         should.not.exist(err);
+        blog_id = blog._id;
         done();
       });
     });
 
-    it('should be able to show an error when try to save without name', function(done) {
-      blog.name = '';
 
-      return blog.save(function(err) {
+    it('Should not save to the db if Blog title is not provided', function(done){
+      new Blog({
+        content: 'content',
+        video: '',
+      }).save(function(err){
         should.exist(err);
         done();
       });
     });
+
+  
+
   });
 
-  afterEach(function(done) {
+  /*afterEach(function(done) {
     Blog.remove().exec(function() {
       User.remove().exec(function() {
         done();
       });
     });
+  });*/
+  afterEach(function(done){
+    if(blog_id){
+      Blog.remove({ _id: blog_id }).exec(function(){
+        blog_id = null;
+        done();
+      });
+    } else{
+      done();
+    }
   });
 });

@@ -59,8 +59,8 @@
 
   newTrainer.$inject = ['trainerService'];
 
-  function newTrainer(trainerService) {
-    return new trainerService();
+  function newTrainer(TrainerService) {
+    return new TrainerService();
   }
 }());
 
