@@ -16,6 +16,20 @@ describe('Requests E2E Tests:', function () {
       expect(element.all(by.repeater('request in requests')).count()).toEqual(0);
     });
 
+    it('Should report missing fields', function () {
+      browser.get('http://localhost:3000/requests/create');
+      // Click Submit button
+      element(by.css('button[type="submit"]')).click();
+      // Request Name Error
+      expect(element.all(by.css('.error-text')).get(0).getText()).toBe('Request name is required.');
+      // Class Name Error
+      expect(element.all(by.css('.error-text')).get(1).getText()).toBe('Class name is required.');
+      // Shift Time Error
+      expect(element.all(by.css('.error-text')).get(2).getText()).toBe('Shift Time is required.');
+      // Reason Error
+      expect(element.all(by.css('.error-text')).get(3).getText()).toBe('Reason is required.');
+    });
+
     // it('Should list requests if credentials are not missing', function () {
     //   browser.get('http://localhost:3000/requests');
     // });
