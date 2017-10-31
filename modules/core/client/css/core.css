@@ -9,7 +9,7 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  margin:0px auto 0px auto;
+  margin:0 auto 0 auto;
 }
 
 .undecorated-link:hover {
@@ -81,10 +81,6 @@ a:hover .header-profile-image {
     color:#000;
 }
 
-.navbar-custom .navbar-brand:hover {
-    
-}
-
 .navbar-custom .navbar-toggle {
     background-color: #eeeeee;
 }
@@ -130,7 +126,6 @@ a:hover .header-profile-image {
   background-color: transparent;
   text-transform: uppercase;
   padding: 10px;
-  border: 2px solid #FFF;
   letter-spacing: 2px;
   border-radius: 5px;
   text-decoration: none;
