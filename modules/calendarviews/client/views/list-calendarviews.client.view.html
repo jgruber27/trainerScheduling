@@ -1,6 +1,6 @@
 <section>
   <script>
-
+    var data = angular.element(document.getElementById('calendarviews')).scope().data;
     $(document).ready(function() {
       var test = vm.calendarviews.name;
       $('#calendar').fullCalendar({
@@ -119,7 +119,7 @@
     </a>
   </div-->
 
-  
+
   <div>
   <div id='calendar'></div>
 </div>
