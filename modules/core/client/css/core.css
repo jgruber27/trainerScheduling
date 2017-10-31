@@ -54,14 +54,14 @@ a:hover .header-profile-image {
 }
 
 .navbar-custom {
-    background-color: transparent;
+    background-color: #9932CC;
     color: transparent;
     border-radius:0;
     padding: 8px 16px 8px 16px;
 }
 
 .navbar-custom .navbar-nav > li > a {
-    color:#000;
+    color:#ffffff;
 }
 
 .navbar-custom .navbar-nav > .active > a {
@@ -82,7 +82,7 @@ a:hover .header-profile-image {
 }
 
 .navbar-custom .navbar-toggle {
-    background-color: #eeeeee;
+    background-color: transparent;
 }
 .navbar-custom .icon-bar {
     background-color: #33aa33;
