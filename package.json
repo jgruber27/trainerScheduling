@@ -11,7 +11,7 @@
     "url": "https://github.com/meanjs/mean.git"
   },
   "engines": {
-    "node": ">=0.10.28",
+    "node": "6.6.0",
     "npm": ">=1.4.28"
   },
   "scripts": {
@@ -37,6 +37,7 @@
     "file-stream-rotator": "~0.0.6",
     "forever": "~0.14.2",
     "fs": "0.0.1-security",
+    "fullcalendar": "^3.6.2",
     "generate-password": "^1.1.1",
     "glob": "^5.0.13",
     "google-auth-library": "^0.11.0",

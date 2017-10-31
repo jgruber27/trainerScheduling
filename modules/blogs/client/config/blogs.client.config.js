@@ -13,7 +13,7 @@
       title: 'Blogs',
       state: 'blogs',
       type: 'dropdown',
-      roles: ['user', 'admin']
+      roles: ['user','admin']
     });
 
     // Add the dropdown list item
