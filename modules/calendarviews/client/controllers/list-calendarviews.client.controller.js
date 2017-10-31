@@ -5,11 +5,19 @@
     .module('calendarviews')
     .controller('CalendarviewsListController', CalendarviewsListController);
 
-  CalendarviewsListController.$inject = ['CalendarviewsService'];
+  CalendarviewsListController.$inject = ['$scope','CalendarviewsService'];
 
-  function CalendarviewsListController(CalendarviewsService) {
+  function CalendarviewsListController($scope,CalendarviewsService) {
     var vm = this;
+    var entry;
+    vm.calendarviews = CalendarviewsService.query().sort('start');
+    vm.calendarview = CalendarviewsService.query().$promise.then(function (result) {
+      //vm.calendarviews = CalendarviewsService.query();
 
-    vm.calendarviews = CalendarviewsService.query();
+      $scope.data = result;
+
+    })
+
+
   }
 }());

@@ -6,8 +6,8 @@
     <form name="vm.form.calendarviewForm" class="form-horizontal" ng-submit="vm.save(vm.form.calendarviewForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.calendarview.name" id="name" class="form-control" placeholder="Name" required>
+          <label class="control-label" for="title">Name</label>
+          <input name="title" type="text" ng-model="vm.calendarview.title" id="title" class="form-control" placeholder="Name" required>
           <div ng-messages="vm.form.calendarviewForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Calendarlist name is required.</p>
           </div>

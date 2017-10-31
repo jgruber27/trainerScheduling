@@ -10,7 +10,7 @@ var mongoose = require('mongoose'),
  * Calendarview Schema
  */
 var CalendarviewSchema = new Schema({
-  name: {
+  title: {
     type: String,
     default: '',
     required: 'Please fill in class name',
