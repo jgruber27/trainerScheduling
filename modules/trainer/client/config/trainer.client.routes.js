@@ -43,7 +43,7 @@
       });
 
   }
-  getTrainer.$inject = ['$stateParams', 'trainerService'];
+  getTrainer.$inject = ['$stateParams', 'TrainerService'];
 
   function getTrainer($stateParams, trainerService) {
     return trainerService.get({
@@ -51,10 +51,11 @@
     }).$promise;
   }
 
-  newTrainer.$inject = ['trainerService'];
+  newTrainer.$inject = ['TrainerService'];
 
-  function newTrainer(trainerService) {
-    return new trainerService();
+  function newTrainer(TrainerService) {
+    return new TrainerService();
   }
 }());
+
 
