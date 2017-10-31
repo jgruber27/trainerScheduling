@@ -13,7 +13,7 @@
       title: 'Availabilities',
       state: 'availabilities',
       type: 'dropdown',
-      roles: ['user'.'admin']
+      roles: ['user','admin']
     });
 
     // Add the dropdown list item

@@ -26,7 +26,7 @@
     menuService.addSubMenuItem('topbar', 'calendarviews', {
       title: 'Create Calendarview',
       state: 'calendarviews.create',
-      roles: ['user']
+      roles: ['admin']
     });
   }
 }());

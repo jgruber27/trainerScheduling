@@ -26,7 +26,7 @@
     menuService.addSubMenuItem('topbar', 'blogs', {
       title: 'Create Blog',
       state: 'blogs.create',
-      roles: ['user']
+      roles: ['user','admin']
     });
   }
 }());

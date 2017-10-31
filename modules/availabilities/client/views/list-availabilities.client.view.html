@@ -21,168 +21,183 @@
   </div>
 </section> -->
 <section>
-<style>
-table.blueTable {
-font-family: Arial, Helvetica, sans-serif;
-border: 0px solid #1C6EA4;
-background-color: #EEEEEE;
-width: 100%;
-text-align: center;
-border-collapse: collapse;
-}
-table.blueTable td, table.blueTable th {
-border: 1px solid #AAAAAA;
-padding: 3px 2px;
-}
-table.blueTable tbody td {
-font-size: 13px;
-}
-table.blueTable tr:nth-child(even) {
-background: #D0E4F5;
-}
-table.blueTable thead {
-background: #EDB664;
-background: -moz-linear-gradient(top, #f1c88b 0%, #eebd73 66%, #EDB664 100%);
-background: -webkit-linear-gradient(top, #f1c88b 0%, #eebd73 66%, #EDB664 100%);
-background: linear-gradient(to bottom, #f1c88b 0%, #eebd73 66%, #EDB664 100%);
-border-bottom: 2px solid #444444;
-}
-table.blueTable thead th {
-font-size: 15px;
-font-weight: bold;
-color: #000000;
-text-align: center;
-}
-table.blueTable tfoot td {
-font-size: 14px;
-}
-table.blueTable tfoot .links {
-text-align: right;
-}
-table.blueTable tfoot .links a{
-display: inline-block;
-background: #1C6EA4;
-color: #FFFFFF;
-padding: 2px 8px;
-border-radius: 5px;
-}
+  <style>
+    table.blueTable {
+      font-family: Arial, Helvetica, sans-serif;
+      border: 0px solid #1C6EA4;
+      background-color: #EEEEEE;
+      width: 100%;
+      text-align: center;
+      border-collapse: collapse;
+    }
 
-.availability-update {
-  color: white;
-}
-</style>
+    table.blueTable td,
+    table.blueTable th {
+      border: 3px solid #AAAAAA;
+      padding: 10px 2px;
+      font-style: oblique;
+      font-size: 10px;
+    }
 
-<h1>Availability</h1>
+    table.blueTable tbody td {
+      font-size: 13px;
+    }
 
-<table class="blueTable">
-<thead>
-<tr>
-  <th></th>
-  <th>Monday</th>
-  <th>Tuesday</th>
-  <th>Wednesday</th>
-  <th>Thursday</th>
-  <th>Friday</th>
-  <th>Saturday</th>
-  <th>Sunday</th>
-</tr>
-</thead>
+    table.blueTable tr:nth-child(even) {
+      background: #D0E4F5;
+    }
 
-<tbody>
-  <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
-    <td>7:00 am</td>
-    <td >{{availability.monday.val_7am}}</td> <!-- Monday 7am -->
-    <td>{{availability.tuesday.val_7am}}</td> <!-- Tuesday 7am -->
-    <td>{{availability.wednesday.val_7am}}</td> <!-- Wednesday 7am -->
-    <td>{{availability.thursday.val_7am}} </td> <!-- Thursday 7 am -->
-    <td>{{availability.friday.val_7am}}</td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
-    <td>8:00 am</td>
-    <td>{{availability.monday.val_8am}}</td>
-    <td>{{availability.tuesday.val_8am}}</td>
-    <td>{{availability.wednesday.val_8am}}</td>
-    <td>{{availability.thursday.val_8am}}</td>
-    <td>{{availability.friday.val_8am}}</td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
-    <td>9:00 am</td>
-    <td>{{availability.monday.val_9am}}</td>
-    <td>{{availability.tuesday.val_9am}}</td>
-    <td>{{availability.wednesday.val_9am}}</td>
-    <td>{{availability.thursday.val_9am}}</td>
-    <td>{{availability.friday.val_9am}}</td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
-    <td>10:00 am</td>
-    <td>{{availability.monday.val_10am}}</td>
-    <td>{{availability.tuesday.val_10am}}</td>
-    <td>{{availability.wednesday.val_10am}}</td>
-    <td>{{availability.thursday.val_10am}}</td>
-    <td>{{availability.friday.val_10am}}</td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
-    <td>11:00 am</td>
-    <td>{{availability.monday.val_11am}}</td>
-    <td>{{availability.tuesday.val_11am}}</td>
-    <td>{{availability.wednesday.val_11am}}</td>
-    <td>{{availability.thursday.val_11am}}</td>
-    <td>{{availability.friday.val_11am}}</td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
-    <td>12:00 pm</td>
-    <td>{{availability.monday.val_12pm}}</td>
-    <td>{{availability.tuesday.val_12pm}}</td>
-    <td>{{availability.wednesday.val_12pm}}</td>
-    <td>{{availability.thursday.val_12pm}}</td>
-    <td>{{availability.friday.val_12pm}}</td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
-    <td>1:00 pm</td>
-    <td>{{availability.monday.val_1pm}}</td>
-    <td>{{availability.tuesday.val_1pm}}</td>
-    <td>{{availability.wednesday.val_1pm}}</td>
-    <td>{{availability.thursday.val_1pm}}</td>
-    <td>{{availability.friday.val_1pm}}</td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
-    <td>2:00 pm</td>
-    <td>{{availability.monday.val_2pm}}</td>
-    <td>{{availability.tuesday.val_2pm}}</td>
-    <td>{{availability.wednesday.val_2pm}}</td>
-    <td>{{availability.thursday.val_2pm}}</td>
-    <td>{{availability.friday.val_2pm}}</td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index" >
-    <td>3:00 pm</td>
-    <td>{{availability.monday.val_3pm}}</td>
-    <td>{{availability.tuesday.val_3pm}}</td>
-    <td>{{availability.wednesday.val_3pm}}</td>
-    <td>{{availability.thursday.val_3pm}}</td>
-    <td>{{availability.friday.val_3pm}}</td>
-    <td> </td>
-    <td> </td>
-  </tr>
-</tbody>
-</table>
+    table.blueTable thead {
+      background: #EDB664;
+      background: -moz-linear-gradient(top, #f1c88b 0%, #eebd73 66%, #EDB664 100%);
+      background: -webkit-linear-gradient(top, #f1c88b 0%, #eebd73 66%, #EDB664 100%);
+      background: linear-gradient(to bottom, #f1c88b 0%, #eebd73 66%, #EDB664 100%);
+      border-bottom: 2px solid #444444;
+    }
 
-<div>
-  <button type="submit" class="btn btn-primary"><a class="availability-update" ui-sref="availabilities.edit'">Update</a></button>
-</div>
+    table.blueTable thead th {
+      font-size: 15px;
+      font-weight: bold;
+      color: #000000;
+      text-align: center;
+    }
+
+    table.blueTable tfoot td {
+      font-size: 14px;
+    }
+
+    table.blueTable tfoot .links {
+      text-align: right;
+    }
+
+    table.blueTable tfoot .links a {
+      display: inline-block;
+      background: #1C6EA4;
+      color: #FFFFFF;
+      padding: 2px 8px;
+      border-radius: 5px;
+    }
+
+    .availability-update {
+      color: white;
+    }
+  </style>
+
+  <h1>Availability</h1>
+
+  <table class="blueTable">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+        <td>7:00 am</td>
+        <td>{{availability.monday.val_7am}}</td>
+        <!-- Monday 7am -->
+        <td>{{availability.tuesday.val_7am}}</td>
+        <!-- Tuesday 7am -->
+        <td>{{availability.wednesday.val_7am}}</td>
+        <!-- Wednesday 7am -->
+        <td>{{availability.thursday.val_7am}} </td>
+        <!-- Thursday 7 am -->
+        <td>{{availability.friday.val_7am}}</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+        <td>8:00 am</td>
+        <td>{{availability.monday.val_8am}}</td>
+        <td>{{availability.tuesday.val_8am}}</td>
+        <td>{{availability.wednesday.val_8am}}</td>
+        <td>{{availability.thursday.val_8am}}</td>
+        <td>{{availability.friday.val_8am}}</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+        <td>9:00 am</td>
+        <td>{{availability.monday.val_9am}}</td>
+        <td>{{availability.tuesday.val_9am}}</td>
+        <td>{{availability.wednesday.val_9am}}</td>
+        <td>{{availability.thursday.val_9am}}</td>
+        <td>{{availability.friday.val_9am}}</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+        <td>10:00 am</td>
+        <td>{{availability.monday.val_10am}}</td>
+        <td>{{availability.tuesday.val_10am}}</td>
+        <td>{{availability.wednesday.val_10am}}</td>
+        <td>{{availability.thursday.val_10am}}</td>
+        <td>{{availability.friday.val_10am}}</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+        <td>11:00 am</td>
+        <td>{{availability.monday.val_11am}}</td>
+        <td>{{availability.tuesday.val_11am}}</td>
+        <td>{{availability.wednesday.val_11am}}</td>
+        <td>{{availability.thursday.val_11am}}</td>
+        <td>{{availability.friday.val_11am}}</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+        <td>12:00 pm</td>
+        <td>{{availability.monday.val_12pm}}</td>
+        <td>{{availability.tuesday.val_12pm}}</td>
+        <td>{{availability.wednesday.val_12pm}}</td>
+        <td>{{availability.thursday.val_12pm}}</td>
+        <td>{{availability.friday.val_12pm}}</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+        <td>1:00 pm</td>
+        <td>{{availability.monday.val_1pm}}</td>
+        <td>{{availability.tuesday.val_1pm}}</td>
+        <td>{{availability.wednesday.val_1pm}}</td>
+        <td>{{availability.thursday.val_1pm}}</td>
+        <td>{{availability.friday.val_1pm}}</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+        <td>2:00 pm</td>
+        <td>{{availability.monday.val_2pm}}</td>
+        <td>{{availability.tuesday.val_2pm}}</td>
+        <td>{{availability.wednesday.val_2pm}}</td>
+        <td>{{availability.thursday.val_2pm}}</td>
+        <td>{{availability.friday.val_2pm}}</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+        <td>3:00 pm</td>
+        <td>{{availability.monday.val_3pm}}</td>
+        <td>{{availability.tuesday.val_3pm}}</td>
+        <td>{{availability.wednesday.val_3pm}}</td>
+        <td>{{availability.thursday.val_3pm}}</td>
+        <td>{{availability.friday.val_3pm}}</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <button type="submit" class="btn btn-primary"><a class="availability-update" ui-sref="availabilities.edit'">Update</a></button>
+  </div>
 </section>

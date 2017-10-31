@@ -19,7 +19,7 @@
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'requests', {
       title: 'List of Requests',
-      state: 'requests.list'
+      state: 'requests.list',
       roles: ['admin']
     });
 
