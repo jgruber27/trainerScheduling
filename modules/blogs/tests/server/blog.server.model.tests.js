@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * Module dependencies.
  */
@@ -11,13 +10,16 @@ var should = require('should'),
 /**
  * Globals
  */
-var user,
-  blog;
+var user, blog;
+
 
 /**
  * Unit tests
  */
 describe('Blog Model Unit Tests:', function() {
+
+  this.timeout(10000);
+
   beforeEach(function(done) {
     user = new User({
       firstName: 'Full',
@@ -31,37 +33,56 @@ describe('Blog Model Unit Tests:', function() {
     user.save(function() {
       blog = new Blog({
         name: 'Blog Name',
+        content: 'Blog content',
         user: user
       });
 
       done();
     });
+
   });
 
-  describe('Method Save', function() {
-    it('should be able to save without problems', function(done) {
-      this.timeout(0);
-      return blog.save(function(err) {
+  describe('Method Save', function(done) {
+    
+
+    it('should be able to save a new blog', function(done) {
+      this.timeout(10000);
+      return blog.save(function(err){
         should.not.exist(err);
         done();
       });
     });
 
-    it('should be able to show an error when try to save without name', function(done) {
+
+    it('Should not save to the db if Blog name is not provided', function(done){
       blog.name = '';
 
-      return blog.save(function(err) {
+      return blog.save(function(err){
         should.exist(err);
         done();
       });
     });
+
+  
+
   });
 
   afterEach(function(done) {
     Blog.remove().exec(function() {
-      User.remove().exec(function() {
-        done();
-      });
+      User.remove().exec(done);
     });
   });
+  /*afterEach(function(done){
+    if(blog_id){
+      Blog.remove({ _id: blog_id }).exec(function(){
+        blog_id = null;
+        done();
+      });
+    } else{
+      done();
+    }
+  });*/
 });
+
+
+

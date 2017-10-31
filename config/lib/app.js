@@ -27,6 +27,7 @@ module.exports.init = function init(callback) {
   mongoose.connect(function (db) {
     // Initialize express
     var app = express.init(db);
+
     if (callback) callback(app, db, config);
 
   });
@@ -34,9 +35,9 @@ module.exports.init = function init(callback) {
 
 module.exports.start = function start(callback) {
   var _this = this;
-
+  
   _this.init(function (app, db, config) {
-
+    
     // Start the app by listening on <port>
     app.listen(process.env.PORT || config.port, function () {
 
@@ -56,7 +57,7 @@ module.exports.start = function start(callback) {
 
       if (callback) callback(app, db, config);
     });
-
+    
   });
 
 };

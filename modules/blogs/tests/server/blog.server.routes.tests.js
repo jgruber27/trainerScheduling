@@ -51,7 +51,8 @@ describe('Blog CRUD tests', function () {
     // Save a user to the test db and create new Blog
     user.save(function () {
       blog = {
-        name: 'Blog name'
+        name: 'Blog name',
+        content: 'Example'
       };
 
       done();
@@ -103,7 +104,7 @@ describe('Blog CRUD tests', function () {
       });
   });
 
-  it('should not be able to save an Blog if not logged in', function (done) {
+  it('should not be able to save a Blog if not logged in', function (done) {
     agent.post('/api/blogs')
       .send(blog)
       .expect(403)
@@ -113,7 +114,7 @@ describe('Blog CRUD tests', function () {
       });
   });
 
-  it('should not be able to save an Blog if no name is provided', function (done) {
+  it('should not be able to save a Blog if no name is provided', function (done) {
     // Invalidate name field
     blog.name = '';
 
@@ -143,7 +144,7 @@ describe('Blog CRUD tests', function () {
       });
   });
 
-  it('should be able to update an Blog if signed in', function (done) {
+  it('should be able to update a Blog if signed in', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -250,7 +251,7 @@ describe('Blog CRUD tests', function () {
       });
   });
 
-  it('should be able to delete an Blog if signed in', function (done) {
+  it('should be able to delete a Blog if signed in', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -293,7 +294,7 @@ describe('Blog CRUD tests', function () {
       });
   });
 
-  it('should not be able to delete an Blog if not signed in', function (done) {
+  it('should not be able to delete a Blog if not signed in', function (done) {
     // Set Blog user
     blog.user = user;
 
