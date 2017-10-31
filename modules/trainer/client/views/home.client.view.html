@@ -1,19 +1,19 @@
 <section >
-  <div class="jumbotron text-center">
+  <div class="jumbotron text-center row">
     <div class="row" style="text-align:center">
-      <h2 style="text-align:center"> 
-        Welcome to the Staff Site 
+      <h2 style="text-align:center">
+        Welcome to the Staff Site
       </h2>
       <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
         <img alt="AllegianceAthletics" class="img-responsive" src="modules/trainer/client/img/logo2.gif" href="/home"/>
       </div>
     </div>
     <br>
-    <div class="row" style="background-color:white; width: auto ; height: 600px; border: 1px solid black; margin: 10px;">
+    <div class="" style="background-color:white; width: auto ; height: 600px; border: 1px solid black; margin: 10px;">
       <h3 style="color:white; background-color:#672C8E; text-align: center; margin: 0px; padding: 12px;">Announcements</h3>
 
       <div id="cc-homepage-announcements">
-        <a ng-repeat="train in vm.trainer | orderBy:'created':true | limitTo:4" class="list-group-item">
+        <a ng-repeat="train in vm.trainer | orderBy:'created':true | limitTo:3" class="list-group-item">
           <h2> <span ng-bind="train.name"></span></h2>
           <p><span ng-bind="train.announcement"></span></p>
           Posted on <span ng-bind="train.created | date:'mediumDate'"></span> by <span ng-bind="train.user.firstName"></span> <span ng-bind="train.user.lastName"></span>
@@ -31,7 +31,7 @@
     <p style="text-align: center;">
       <a class="btn btn-primary btn-lg" href="api/auth/signout" target="_blank">Log Out</a>
       <br>Enjoy &amp; Keep Us Updated,
-      <br>Allegiance Athletics 
+      <br>Allegiance Athletics
     </p>
   </div>
 </section>
