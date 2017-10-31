@@ -9,6 +9,7 @@
 
   function menuConfig(menuService) {
     // Set top bar menu items
+    /* NOT NEEDED ATM
     menuService.addMenuItem('topbar', {
       title: 'Calendarlists',
       state: 'calendarlists',
@@ -28,5 +29,6 @@
       state: 'calendarlists.create',
       roles: ['admin']
     });
+    */
   }
 }());

@@ -9,6 +9,7 @@
 
   function menuConfig(menuService) {
     // Set top bar menu items
+    /*
     menuService.addMenuItem('topbar', {
       title: 'Staffviews',
       state: 'staffviews',
@@ -40,5 +41,6 @@
       state: 'staffviews.availability',
       roles: ['user']
     });
+    */
   }
 }());

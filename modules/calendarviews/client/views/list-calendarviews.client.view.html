@@ -71,7 +71,7 @@
   </div>
   <div class="col-lg-3" style="text-align:center;">
     <h4>List of Events</h4>
-    <li ng-repeat="calendar in vm.calendarviews">
+    <li ng-repeat="calendar in vm.calendarviews | orderBy:'created':true">
       <span>{{calendar.title}}</span>
       <span>{{calendar.start}}</span>
       <span>{{calendar.end}}</span>
