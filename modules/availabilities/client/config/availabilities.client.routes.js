@@ -23,6 +23,15 @@
           pageTitle: 'Availabilities List'
         }
       })
+      .state('availabilityTable', {
+        url: '/avail',
+        templateUrl: 'modules/availabilities/client/views/availabilityIndex.html',
+        controller: 'AvailabilitiesListController',
+        controllerAs: 'vm',
+        data: {
+          pageTitle: 'Availabilities'
+        }
+      })
       .state('availabilities.create', {
         url: '/create',
         templateUrl: 'modules/availabilities/client/views/form-availability.client.view.html',
