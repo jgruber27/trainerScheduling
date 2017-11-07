@@ -17,12 +17,18 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    vm.get = get;
 
     // Remove existing Calendarview
     function remove() {
+      alert("jnjfd");
       if ($window.confirm('Are you sure you want to delete?')) {
         vm.calendarview.$remove($state.go('calendarviews.list'));
       }
+    }
+
+    function get() {
+
     }
 
     // Save Calendarview

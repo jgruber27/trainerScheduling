@@ -1,8 +1,24 @@
 <section>
-<script>
-
+<h1>{{vm.calendarviews.length}}</h1>
+  <div class="alert alert-warning text-center" ng-if="vm.calendarviews.$resolved && !vm.calendarviews.length" style="display: none;" >
+    No Events yet, do you want to <a ui-sref="calendarviews.create">create one</a>?
+  </div>
+  <div class="list-group">
+    <a ng-repeat="calendarview in vm.calendarviews"
+       ui-sref="calendarviews.view({ calendarviewId: calendarview._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="calendarview.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="calendarview.user" ng-bind="calendarview.user.displayName"></span>
+        <span ng-if="!calendarview.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" id="name">{{calendarview.name}}</h4>
+    </a>
+  </div>
+<script type="text/javascript">
   $(document).ready(function() {
-    
     $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
@@ -32,7 +48,7 @@
       eventLimit: true, // allow "more" link when too many events
       events: [
         {
-          title: 'All Day Event',
+          title: "dss",
           start: '2017-10-01'
         },
         {
@@ -89,7 +105,6 @@
     });
     
   });
-
 </script>
 <style>
 
@@ -106,23 +121,6 @@
   }
 
 </style>
-  <div class="alert alert-warning text-center" ng-if="vm.calendarviews.$resolved && !vm.calendarviews.length">
-    No Events yet, do you want to <a ui-sref="calendarviews.create">create one</a>?
-  </div>
-  <div class="list-group">
-    <a ng-repeat="calendarview in vm.calendarviews"
-       ui-sref="calendarviews.view({ calendarviewId: calendarview._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="calendarview.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="calendarview.user" ng-bind="calendarview.user.displayName"></span>
-        <span ng-if="!calendarview.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="calendarview.name"></h4>
-    </a>
-  </div>
 
 
 
