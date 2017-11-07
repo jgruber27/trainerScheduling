@@ -5,19 +5,17 @@
 
   angular
     .module('trainer')
-    .factory('TrainerService', TrainerService);
+    .factory('trainerService', trainerService);
 
-  TrainerService.$inject = ['$resource'];
+  trainerService.$inject = ['$resource'];
 
-  function TrainerService($resource) {
-    return $resource('api/schedules/:scheduleId', {
-      scheduleId: '@_id'
+  function trainerService($resource) {
+    return $resource('api/trainer/:trainerId', {
+      requestId: '@_id'
     }, {
       update: {
         method: 'PUT'
       }
     });
   }
-
-
 }());

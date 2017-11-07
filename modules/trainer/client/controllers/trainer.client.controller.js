@@ -1,42 +1,53 @@
-'use strict';
-angular.module('trainer').controller('TrainerController', [
-  '$scope',
-  '$location',
-  '$stateParams',
-  '$state',
-  'Trainer',
-  function($scope, $location, $stateParams, $state, Trainer) {
-    $scope.find = function() {
-    };
+(function () {
+  'use strict';
 
-    angular.module('trainer').controller('TrainerController', TrainerController);
+  //Trainer controller
+  angular
+    .module('trainer')
+    .controller('TrainerController', TrainerController);
 
-    TrainerController.$inject = ['$scope'];
+  TrainerController.$inject = ['$scope', '$state', '$window', 'Authentication', 'trainerResolve'];
 
-    function TrainerController($scope) {
-      var vm = this;
-      // $scope.announcements{
-      //   $scope.dateAdded = "",
-      //   $scope.name = "",
-      //   $scope.title = "",
-      //   $scope.announcement = ""
-      // }
-      // Trainer controller logic
-      // ...
+  function TrainerController ($scope, $state, $window, Authentication, trainer) {
+    var vm = this;
 
-      init();
-
-      function init() {
-      }
-
-
-      function createAnnouncement(title, announcement, $scope){
-        $scope.announcements.name = name;
-        $scope.announcements.dateAdded = new Date();
-        $scope.announcements.titles = title;
-        $scope.announcements.announcement = announcement;
-        console.log(announcement);
-        console.log(title);
+    vm.authentication = Authentication;
+    vm.trainer = trainer;
+    vm.error = null;
+    vm.form = {};
+    vm.remove = remove;
+    vm.save = save;
+    // Remove existing Trainer
+    function remove() {
+      if ($window.confirm('Are you sure you want to decline and delete this announcement?')) {
+        vm.trainer.$remove($state.go('home'));
       }
     }
-  }]);
+
+    // Save Trainer
+    function save(isValid) {
+      if (!isValid) {
+        $scope.$broadcast('show-errors-check-validity', 'vm.form.trainerForm');
+        return false;
+      }
+
+      // TODO: move create/update logic to service
+      if (vm.trainer._id) {
+        vm.trainer.$update(successCallback, errorCallback);
+      } else {
+        vm.trainer.$save(successCallback, errorCallback);
+      }
+
+      function successCallback(res) {
+        $state.go('home', {
+          trainerId: res._id
+        });
+      }
+
+      function errorCallback(res) {
+        vm.error = res.data.message;
+      }
+
+    }
+  }
+}());
