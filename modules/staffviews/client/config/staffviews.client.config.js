@@ -9,16 +9,17 @@
 
   function menuConfig(menuService) {
     // Set top bar menu items
+    /*
     menuService.addMenuItem('topbar', {
       title: 'Staffviews',
       state: 'staffviews',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user', 'admin']
     });
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'staffviews', {
-      title: 'List Staffviews',
+      title: 'Staff Main',
       state: 'staffviews.list'
     });
 
@@ -28,5 +29,18 @@
       state: 'staffviews.create',
       roles: ['user']
     });
+
+    menuService.addSubMenuItem('topbar', 'staffviews', {
+      title: 'Request Off',
+      state: 'staffviews.requestoff',
+      roles: ['user']
+    });
+
+    menuService.addSubMenuItem('topbar', 'staffviews', {
+      title: 'Availability',
+      state: 'staffviews.availability',
+      roles: ['user']
+    });
+    */
   }
 }());

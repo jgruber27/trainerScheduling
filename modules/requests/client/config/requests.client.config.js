@@ -10,16 +10,17 @@
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: 'Requests',
+      title: 'Request Off',
       state: 'requests',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user', 'admin']
     });
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'requests', {
-      title: 'List Requests',
-      state: 'requests.list'
+      title: 'List of Requests',
+      state: 'requests.list',
+      roles: ['admin']
     });
 
     // Add the dropdown create item

@@ -5,8 +5,8 @@
  */
 var should = require('should'),
   mongoose = require('mongoose'),
-  User = mongoose.model('User'),
-  Trainer = mongoose.model('Trainer');
+  User = mongoose.model('User', new mongoose.Schema()),
+  Trainer = mongoose.model('Trainer', new mongoose.Schema());
 
 /**
  * Globals
@@ -27,10 +27,10 @@ describe('Trainer Model Unit Tests:', function() {
       password: 'password'
     });
 
-    user.save(function() { 
+    user.save(function() {
       trainer = new Trainer({
-        // Add model fields
-        // ...
+        name: "Testing Name",
+        announcement: "Test body!"
       });
 
       done();

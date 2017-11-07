@@ -16,6 +16,23 @@ var RequestSchema = new Schema({
     required: 'Please fill Request name',
     trim: true
   },
+  class: {
+    type: String,
+    default: '',
+    required: 'Please fill Class name',
+    trim: true
+  },
+  reason: {
+    type: String,
+    default: '',
+    required: 'Please fill reason out',
+    trim: true
+  },
+  shiftTime: {
+    type: String,
+    default: 'N/A',
+    trim: true
+  },
   created: {
     type: Date,
     default: Date.now

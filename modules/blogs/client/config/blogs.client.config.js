@@ -13,7 +13,7 @@
       title: 'Blogs',
       state: 'blogs',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user','admin']
     });
 
     // Add the dropdown list item
@@ -26,7 +26,7 @@
     menuService.addSubMenuItem('topbar', 'blogs', {
       title: 'Create Blog',
       state: 'blogs.create',
-      roles: ['user']
+      roles: ['user','admin']
     });
   }
 }());
