@@ -21,6 +21,11 @@ var BlogSchema = new Schema({
     default: '',
     trim: true
   },
+  tags: {
+    type: String,
+    default: '',
+    trim: true
+  },
   video: {
     type: String,
     default: '',
