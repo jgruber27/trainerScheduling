@@ -20,6 +20,30 @@
     No Availabilities yet, why don't you <a ui-sref="availabilities.create">create one</a>?
   </div>
 </section> -->
+<script src='../controllers/weeklycalendar.client.controller.js'></script>
+
+<label>Calendar goes here!</label>
+
+<style>
+
+  body {
+    margin: 40px 10px;
+    padding: 0;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    font-size: 14px;
+  }
+
+  #staffCalendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+</style>
+
+<div id='staffCalendar'></div>
+
+<label>Calendar ends here!</label>
+
 <section>
   <style>
     table.blueTable {
@@ -84,6 +108,8 @@
   </style>
 
   <h1>Availability</h1>
+
+  <div id='staffCalendar'></div>
 
   <table class="blueTable">
     <thead>
