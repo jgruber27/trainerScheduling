@@ -1,10 +1,11 @@
 <section ng-controller=CalendarviewsListController id="app">
   <script>
+  var timer = setInterval(checkDataReady, 100);
   function checkDataReady(){
         
         var data = angular.element(document.getElementById('app')).scope().data;
-
   if (data){
+    clearInterval(timer);
       $(document).ready(function() {
         console.log(data);
         $('#calendar').fullCalendar({
@@ -39,7 +40,7 @@
       });
     }
     }
-    setTimeout(checkDataReady,1000);
+    //setTimeout(checkDataReady,1000);
   </script>
   <style>
     body {
@@ -47,7 +48,6 @@
       font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
       font-size: 14px;
     }
-
     #calendar {
       max-width: 900px;
       margin: 0 auto;
