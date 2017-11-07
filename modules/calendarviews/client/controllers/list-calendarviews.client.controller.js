@@ -16,6 +16,7 @@
       $scope.data = result;
     });
 
-
+    vm.calendarviews = CalendarviewsService.query();
   }
+
 }());

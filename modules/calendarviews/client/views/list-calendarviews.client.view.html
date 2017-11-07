@@ -1,39 +1,45 @@
-<section ng-controller=CalendarviewsListController id="app">
+<section>
   <script>
-    $(document).ready(function() {
+  function checkDataReady(){
+        
+        var data = angular.element(document.getElementById('app')).scope().data;
 
-      var data = angular.element(document.getElementById('app')).scope().data;
-      console.log(data);
-      $('#calendar').fullCalendar({
-        header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
-        },
-        defaultDate: Date.now(),
-        navLinks: true, // can click day/week titles to navigate views
-        selectable: false,
-        selectHelper: false,
-        /*select: function(start, end) {
-          var title = prompt('Event Title:');
-          var start = prompt('Event start Time:');
-          var end = prompt('Event End Time:');
-          var eventData;
-          if (title) {
-            eventData = {
-              title: title,
-              start: start,
-              end: end
-            };
-            $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-          }
-          $('#calendar').fullCalendar('unselect');
-        },*/
-        editable: false,
-        eventLimit: true, // allow "more" link when too many events
-        events: data,
+  if (data){
+      $(document).ready(function() {
+        console.log(data);
+        $('#calendar').fullCalendar({
+          header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+          },
+          defaultDate: Date.now(),
+          navLinks: true, // can click day/week titles to navigate views
+          selectable: false,
+          selectHelper: false,
+          /*select: function(start, end) {
+            var title = prompt('Event Title:');
+            var start = prompt('Event start Time:');
+            var end = prompt('Event End Time:');
+            var eventData;
+            if (title) {
+              eventData = {
+                title: title,
+                start: start,
+                end: end
+              };
+              $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+            }
+            $('#calendar').fullCalendar('unselect');
+          },*/
+          editable: false,
+          eventLimit: true, // allow "more" link when too many events
+          events: data,
+        });
       });
-    });
+    }
+    }
+    setTimeout(checkDataReady,1000);
   </script>
   <style>
     body {
@@ -47,31 +53,13 @@
       margin: 0 auto;
     }
   </style>
-  <!--div class="alert alert-warning text-center" ng-if="vm.calendarviews.$resolved && !vm.calendarviews.length">
-    No Events yet, do you want to <a ui-sref="calendarviews.create">create one</a>?
-  </div>
-  <!div class="list-group">
-    <a ng-repeat="calendarview in vm.calendarviews"
-       ui-sref="calendarviews.view({ calendarviewId: calendarview._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="calendarview.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="calendarview.user" ng-bind="calendarview.user.displayName"></span>
-        <span ng-if="!calendarview.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="calendarview.title"></h4>
-    </a>
-  </div-->
-
-
+</br>
   <div class="col-lg-9">
     <div id='calendar'></div>
   </div>
   <div class="col-lg-3" style="text-align:center;">
     <h4>List of Events</h4>
-    <li ng-repeat="calendar in vm.calendarviews">
+    <li ng-repeat="calendar in vm.calendarviews | orderBy:'created':true">
       <span>{{calendar.title}}</span>
       <span>{{calendar.start}}</span>
       <span>{{calendar.end}}</span>
