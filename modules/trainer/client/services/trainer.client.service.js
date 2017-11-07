@@ -1,3 +1,5 @@
+
+// Schedules service used to communicate Schedules REST endpoints
 (function () {
   'use strict';
 

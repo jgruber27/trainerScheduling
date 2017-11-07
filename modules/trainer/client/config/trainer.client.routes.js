@@ -15,25 +15,19 @@
         url: '/',
         templateUrl: 'modules/trainer/client/views/home.client.view.html',
         controller: 'TrainerListController',
-        controllerAs: 'vm'
-        // data: {
-        //   roles: ['user', 'admin']
-        // }
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('homeadmin', {
         url: '/homeadmin',
         templateUrl: 'modules/trainer/client/views/homeadmin.client.view.html',
         controller: 'TrainerListController',
-        controllerAs: 'vm'
-        // data: {
-        //   roles: ['admin']
-        // }
-      })
-      .state('NotLoggedIn', {
-        url: '/NotLoggedIn',
-        templateUrl: 'modules/trainer/client/views/NotLoggedIn.client.view.html',
-        controller: 'TrainerController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        data: {
+          roles: ['admin']
+        }
       })
       .state('createAnnouncement', {
         url: '/createAnnouncement',
@@ -42,14 +36,14 @@
         controllerAs: 'vm',
         resolve: {
           trainerResolve: newTrainer
+        },
+        data: {
+          roles: ['admin']
         }
-        // data: {
-        //   roles: ['admin']
-        // }
       });
 
   }
-  getTrainer.$inject = ['$stateParams', 'trainerService'];
+  getTrainer.$inject = ['$stateParams', 'TrainerService'];
 
   function getTrainer($stateParams, trainerService) {
     return trainerService.get({
@@ -57,28 +51,11 @@
     }).$promise;
   }
 
-  newTrainer.$inject = ['trainerService'];
+  newTrainer.$inject = ['TrainerService'];
 
   function newTrainer(TrainerService) {
     return new TrainerService();
   }
 }());
 
-/*
-'use strict';
-angular.module('trainer').config([
-  '$stateProvider',
-  '$urlRouterProvider',
-  function($stateProvider) {
-    //Listings state providing
-    $stateProvider.state('trainer', {
-      url: '/trainer',
-      templateUrl: 'modules/trainer/client/views/trainer.client.view.html',
-      controller: 'TrainerController',
-      controllerAs: 'vm'
-    }).state('blog', {
-      url: '/blog',
-      templateUrl: 'modules/trainer/client/views/blog.client.view.html',
-      controller: 'BlogController'
-    });
-master*/
+
