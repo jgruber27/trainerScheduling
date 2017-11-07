@@ -10,7 +10,6 @@
 
   function CalendarviewsController ($scope, $state, $window, Authentication, calendarview) {
     var vm = this;
-
     vm.authentication = Authentication;
     vm.calendarview = calendarview;
     vm.error = null;

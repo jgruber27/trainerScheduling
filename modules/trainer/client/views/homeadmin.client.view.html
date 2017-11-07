@@ -1,77 +1,36 @@
 <section >
-  <div class="jumbotron text-center" ng-controller="TrainerController">
-    
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-        <img alt="AllegianceAthletics" class="img-responsive text-center" src="modules/trainer/client/img/logo.png" />
-      </div>
-    
-    </div>
-    
-    <br>
-    
-    <div class="row">
-      <p class="lead">
+  <div class="jumbotron">
+    <div class="row" style="text-align:center">
+      <h2>
         Allegiance Athletics Admin View
-      </p>
+      </h2>
+      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+        <img alt="AllegianceAthletics" class="img-responsive" src="modules/trainer/client/img/logo2.gif"/>
+      </div>
     </div>
-    
+    <br>
+    <div class="row" style="background-color:white; width: auto ; height: 600px; border: 1px solid black; margin: 10px; text-align: center">
+
+      <h3 style="color:white; background-color:#672C8E; text-align: center; margin: 0px; padding: 12px;">Announcements 
+        <a href="createAnnouncement" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-plus-sign"></span>New</a>
+        </h3> 
+
+        <div id="cc-homepage-announcements">
+          <a ng-repeat="train in vm.trainer | orderBy:'created':true | limitTo:4" class="list-group-item">
+            <h2> <span ng-bind="train.name"></span></h2>
+            <p><span ng-bind="train.announcement"></span></p>
+            Posted on <span ng-bind="train.created | date:'mediumDate'"></span> by <span ng-bind="train.user.firstName"></span> <span ng-bind="train.user.lastName"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div class="row">
-      <p>
-        <a class="btn btn-primary btn-lg" href="authentication/signin" target="_blank">Log In</a>
+      <p style="text-align: center;">
+        <a class="btn btn-primary btn-lg" href="api/auth/signout" target="_blank">Log Out</a>
+        <br>Enjoy &amp; Keep Us Updated,
+        <br>Allegiance Athletics 
       </p>
     </div>
-    </div>
-    <div class="row" style="background-color: #FFFFFF; width: auto ; height: 600px; border: 1px solid black; margin: 10px;">
-    <h3 style="color: #510859; background-color: #E96C1A; text-align: center; margin: 0px; padding: 12px;">Announcements <a href="createAnnouncement" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-plus-sign"></span>New</a></h3> 
-
-    <div id="cc-homepage-announcements"> 
-    	Posted on -{{$scope.announcements.dateadded}}- by -{{$scope.announcements.name}}-
-    	
-    	<p>{{$scope.announcements.announcement}}</p>
-
-    </div>
-  </div>
-    
-  <div class="row">
-    <div class="col-md-3">
-      <h2><strong>S</strong>taff Pages</h2>
-      <p><a target="_blank" href="modules/core/client/views/403.client.view.html">Staff Page</a> is the place you might be looking for. You can find your scheduled classes here.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>A</strong>dmin</h2>
-      <p><a target="_blank" href="modules/core/client/views/400.client.view.html"> ADMIN </a> Are you an ---ADMIN---? Here's your portal.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>W</strong>ork in Progress</h2>
-      <p><a target="_blank" href="http://angularjs.org/">Here's another link</a> Needless to say, this isnt done yet.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>S</strong>cheduling</h2>
-      <p><a target="_blank" href="http://nodejs.org/">A wild link has appeared</a> Let's do some more stuff here</p>
-    </div>
-  </div>
-  <div class="well">
-    <h2>Other Information </h2>
-    <p> 
-    	Other Information
-    	<ul>
-        <li><a target="_blank" href="http://meanjs.org/docs.html">Change this link</a>
-        </li>
-        <!-- <li><a target="_blank" href="http://meanjs.org/generator.html">Yeoman Generator</a>
-        </li> -->
-        <li><a target="_blank" href="http://meanjs.org/modules.html">Modules</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/changelog.html">Changelog</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/community.html">Community</a>
-        </li>
-        <li><a target="_blank" href="http://blog.meanjs.org">Blog</a>
-        </li>
-      </ul>
-    </p>
-  </div>
-  <br>Enjoy &amp; Keep Us Updated,
-  <br>Allegiance Athletics
 </section>

@@ -1,17 +1,24 @@
 'use strict';
 
+
+var trainer = require('../controllers/trainer.server.controller');
+
 module.exports = function(app) {
-  // Routing logic
-  var blog = require('../controllers/trainer.server.controller.js'),
-    express = require('express'),
-    router = express.Router();
+  // Trainer Routes
+  app.route('/api/trainer').all()
+    .get(trainer.list)
+    .post(trainer.create);
 
-/*
-  These method calls are responsible for routing requests to the correct request handler.
-  Take note that it is possible for different controller functions to handle requests to the same route.
- */
-  router.route('/blog')
-  .get(blog.list);
 
-  module.exports = router;
+
+  app.route('/api/trainer/:trainerId').all()
+    .get(trainer.read)
+    .put(trainer.update)
+    .delete(trainer.delete);
+
+  // Finish by binding the Trainer middleware
+  app.param('trainerId', trainer.requestByID);
 };
+
+
+

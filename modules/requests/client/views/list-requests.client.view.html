@@ -2,7 +2,7 @@
 <style>
 h1{text-align:center;}
 h2{text-align:center;}
-.pendingReq{   
+.pendingReq{
   max-width: 300px;
   border: 2px solid black;
   margin:0 auto;
@@ -31,7 +31,7 @@ h2{text-align:center;}
       <td>
       {{request.name}}
       </td>
-      <td>  
+      <td>
           <span ng-if="request.user" ng-bind="request.user.displayName"></span>
           <span ng-if="!request.user">Deleted User</span>
       </td>
