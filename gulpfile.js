@@ -23,17 +23,19 @@ var _ = require('lodash'),
 // Set NODE_ENV to 'test'
 gulp.task('env:test', function () {
   process.env.NODE_ENV = 'test';
+  process.env.MONGOLAB_URI= 'mongodb://japanglais:iTzmai@ds161164.mlab.com:61164';
 });
 
 // Set NODE_ENV to 'development'
 gulp.task('env:dev', function () {
   process.env.NODE_ENV = 'development';
-  process.env.MONGOLAB_URI= 'mongodb://japanglais:iTzmai@ds161164.mlab.com:61164'
+  process.env.MONGOLAB_URI= 'mongodb://japanglais:iTzmai@ds161164.mlab.com:61164';
 });
 
 // Set NODE_ENV to 'production'
 gulp.task('env:prod', function () {
   process.env.NODE_ENV = 'production';
+  process.env.MONGOLAB_URI= 'mongodb://japanglais:iTzmai@ds161164.mlab.com:61164';
 });
 
 // Nodemon task

@@ -1,22 +1,55 @@
 <section>
-  <div class="page-header">
+<style>
+h1{text-align:center;}
+h2{text-align:center;}
+.pendingReq{
+  max-width: 300px;
+  border: 2px solid black;
+  margin:0 auto;
+  margin-bottom: -2px;}
+.listOfReq{
+  border: 2px solid black;}
+</style>
+  <div class="reqHead">
     <h1>Requests</h1>
   </div>
-  <div class="list-group">
-    <a ng-repeat="request in vm.requests"
-       ui-sref="requests.view({ requestId: request._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="request.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="request.user" ng-bind="request.user.displayName"></span>
-        <span ng-if="!request.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="request.name"></h4>
-    </a>
+  <div class="pendingReq">
+  <h2>{{vm.requests.length}} Pending Requests</h2>
   </div>
-  <div class="alert alert-warning text-center" ng-if="vm.requests.$resolved && !vm.requests.length">
-    No Requests yet, why don't you <a ui-sref="requests.create">create one</a>?
+  <div class="listOfReq" >
+  <table class="table table-striped table-hover">
+      <tr style="background-color:lightblue;">
+        <th>Request</th>
+        <th>Name</th>
+        <th>Shift Time</th>
+        <th>Date Requested</th>
+        <th>Class Type</th>
+        <th>Reason</th>
+      </tr>
+      <tr ng-repeat="request in vm.requests"  ui-sref="requests.view({ requestId: request._id })" style="cursor: pointer;">
+      <a >
+      <td>
+      {{request.name}}
+      </td>
+      <td>
+          <span ng-if="request.user" ng-bind="request.user.displayName"></span>
+          <span ng-if="!request.user">Deleted User</span>
+      </td>
+      <td>
+          {{request.shiftTime}}
+      </td>
+      <td>
+          <span ng-bind="request.created | date:'mediumDate'"></span>
+      </td>
+      <td>
+      {{request.class}}
+      </td>
+      <td>
+      {{request.reason}}
+      </td>
+      </a>
+    </tr>
+  </table>
   </div>
+
 </section>

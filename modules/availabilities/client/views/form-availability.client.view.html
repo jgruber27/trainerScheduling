@@ -1,0 +1,193 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.availability._id ? 'Edit Availability' : 'Update New Availability'}}</h1>
+  </div>
+  <div class="container">
+    <form name="vm.form.availabilityForm" class="form-horizontal" ng-submit="vm.save(vm.form.availabilityForm.$valid)" novalidate>
+      <fieldset>
+        <div class="row">
+          <div class="form-group col-md-2" show-errors>
+            <label class="control-label" for="monday">Monday</label>
+            <div class="mondayCheckboxes">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_7am"> 7:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_8am"> 8:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_9am"> 9:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_10am"> 10:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_11am"> 11:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_12pm"> 12:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_1pm"> 1:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_2pm"> 2:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_3pm"> 3:00 pm</label>
+            </div>
+            <!--div>
+                <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_4pm"> 4:00 pm</label>
+              </div>
+              <div>
+                <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_5pm"> 5:00 pm</label>
+              </div>
+              <div>
+                <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_6pm"> 6:00 pm</label>
+              </div>
+              <div>
+                <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_7pm"> 7:00 pm</label>
+              </div>
+              <div>
+                <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_8pm"> 8:00 pm</label>
+              </div>
+              <div>
+                <label><input type="checkbox" ng-value="true" ng-model="vm.availability.monday.val_9pm"> 9:00 pm</label>
+              </div> -->
+          </div>
+
+          <div class="form-group col-md-2" show-errors>
+            <label class="control-label" for="tuesday">Tuesday</label>
+            <!-- <input name="tuesday" type="text" ng-model="vm.availability.tuesday.value1" id="tuesday" class="form-control" placeholder="Tuesday"> -->
+            <div class="tuesdayCheckboxes">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.tuesday.val_7am"> 7:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.tuesday.val_8am"> 8:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.tuesday.val_9am"> 8:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.tuesday.val_10am"> 10:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.tuesday.val_11am"> 11:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.tuesday.val_12pm"> 12:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.tuesday.val_1pm"> 1:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.tuesday.val_2pm"> 2:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.tuesday.val_3pm"> 3:00 pm</label>
+            </div>
+          </div>
+
+          <div class="form-group col-md-2" show-errors>
+            <label class="control-label" for="wednesday">Wednesday</label>
+            <div class="wednesdayCheckboxes">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.wednesday.val_7am"> 7:00 am</label>
+            </div>
+            <div class="">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.wednesday.val_8am"> 8:00 am</label>
+            </div>
+            <div class="">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.wednesday.val_9am"> 9:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.wednesday.val_10am"> 10:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.wednesday.val_11am"> 11:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.wednesday.val_12pm"> 12:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.wednesday.val_1pm"> 1:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.wednesday.val_2pm"> 2:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.wednesday.val_3pm"> 3:00 pm</label>
+            </div>
+          </div>
+
+          <div class="form-group col-md-2" show-errors>
+            <label class="control-label" for="thursday">Thursday</label>
+            <div class="thursdayCheckboxes">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.thursday.val_7am"> 7:00 am</label>
+            </div>
+            <div class="">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.thursday.val_8am"> 8:00 am</label>
+            </div>
+            <div class="">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.thursday.val_9am"> 9:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.thursday.val_10am"> 10:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.thursday.val_11am"> 11:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.thursday.val_12pm"> 12:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.thursday.val_1pm"> 1:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.thursday.val_2pm"> 2:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.thursday.val_3pm"> 3:00 pm</label>
+            </div>
+          </div>
+
+          <div class="form-group col-md-2" show-errors>
+            <label class="control-label" for="friday">Friday</label>
+            <div class="fridayCheckboxes">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.friday.val_7am"> 7:00 am</label>
+            </div>
+            <div class="">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.friday.val_8am"> 8:00 am</label>
+            </div>
+            <div class="">
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.friday.val_9am"> 9:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.friday.val_10am"> 10:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.friday.val_11am"> 11:00 am</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.friday.val_12pm"> 12:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.friday.val_1pm"> 1:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.friday.val_2pm"> 2:00 pm</label>
+            </div>
+            <div>
+              <label><input type="checkbox" ng-value="true" ng-model="vm.availability.friday.val_3pm"> 3:00 pm</label>
+
+            </div>
+          </div>
+          <div class="form-group row">
+            <button type="submit" class="btn btn-default">{{vm.availability._id ? 'Update' : 'Update'}}</button>
+          </div>
+          <div ng-show="vm.error" class="text-danger">
+            <strong ng-bind="vm.error"></strong>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

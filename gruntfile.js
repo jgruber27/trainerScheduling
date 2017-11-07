@@ -16,14 +16,18 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     env: {
       test: {
-        NODE_ENV: 'test'
+        NODE_ENV: 'test',
+        MONGOLAB_URI: 'mongodb://japanglais:iTzmai@ds161164.mlab.com:61164'
+
       },
       dev: {
         NODE_ENV: 'development',
         MONGOLAB_URI: 'mongodb://japanglais:iTzmai@ds161164.mlab.com:61164'
       },
       prod: {
-        NODE_ENV: 'production'
+        NODE_ENV: 'production',
+        MONGOLAB_URI: 'mongodb://japanglais:iTzmai@ds161164.mlab.com:61164'
+
       }
     },
     watch: {
