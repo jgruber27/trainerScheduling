@@ -1,39 +1,45 @@
 <section ng-controller=CalendarviewsListController id="app">
   <script>
-    $(document).ready(function() {
+  function checkDataReady(){
+        
+        var data = angular.element(document.getElementById('app')).scope().data;
 
-      var data = angular.element(document.getElementById('app')).scope().data;
-      console.log(data);
-      $('#calendar').fullCalendar({
-        header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
-        },
-        defaultDate: Date.now(),
-        navLinks: true, // can click day/week titles to navigate views
-        selectable: false,
-        selectHelper: false,
-        /*select: function(start, end) {
-          var title = prompt('Event Title:');
-          var start = prompt('Event start Time:');
-          var end = prompt('Event End Time:');
-          var eventData;
-          if (title) {
-            eventData = {
-              title: title,
-              start: start,
-              end: end
-            };
-            $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-          }
-          $('#calendar').fullCalendar('unselect');
-        },*/
-        editable: false,
-        eventLimit: true, // allow "more" link when too many events
-        events: data,
+  if (data){
+      $(document).ready(function() {
+        console.log(data);
+        $('#calendar').fullCalendar({
+          header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+          },
+          defaultDate: Date.now(),
+          navLinks: true, // can click day/week titles to navigate views
+          selectable: false,
+          selectHelper: false,
+          /*select: function(start, end) {
+            var title = prompt('Event Title:');
+            var start = prompt('Event start Time:');
+            var end = prompt('Event End Time:');
+            var eventData;
+            if (title) {
+              eventData = {
+                title: title,
+                start: start,
+                end: end
+              };
+              $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+            }
+            $('#calendar').fullCalendar('unselect');
+          },*/
+          editable: false,
+          eventLimit: true, // allow "more" link when too many events
+          events: data,
+        });
       });
-    });
+    }
+    }
+    setTimeout(checkDataReady,1000);
   </script>
   <style>
     body {
