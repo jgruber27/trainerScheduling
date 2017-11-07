@@ -19,12 +19,12 @@
             <p class="help-block error-text" ng-message="required">Calendarlist trainer is required.</p>
           </div>
           <label class="control-label" for="start">Start</label>
-          <input name="start" type="text" ng-model="vm.calendarview.start" id="start" class="form-control" placeholder="Start" required>
+          <input name="start" type="datetime-local" ng-model="vm.calendarview.start" id="start" class="form-control" placeholder="Start" required>
           <div ng-messages="vm.form.calendarviewForm.start.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Calendarlist start is required.</p>
           </div>
           <label class="control-label" for="end">End</label>
-          <input name="end" type="text" ng-model="vm.calendarview.end" id="end" class="form-control" placeholder="End" required>
+          <input name="end" type="datetime-local" ng-model="vm.calendarview.end" id="end" class="form-control" placeholder="End" required>
           <div ng-messages="vm.form.calendarviewForm.end.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Calendarlist end is required.</p>
           </div>

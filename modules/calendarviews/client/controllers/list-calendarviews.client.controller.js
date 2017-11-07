@@ -13,10 +13,8 @@
     vm.calendarviews = CalendarviewsService.query().sort('start');
     vm.calendarview = CalendarviewsService.query().$promise.then(function (result) {
       //vm.calendarviews = CalendarviewsService.query();
-
       $scope.data = result;
-
-    })
+    });
 
 
   }
