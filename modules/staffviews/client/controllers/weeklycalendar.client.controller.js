@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('#staffcalendar').fullCalendar({
+    $('#staffCalendar').fullCalendar({
         header: {
             left: 'prev,next today',
             center: 'title',
@@ -19,9 +19,9 @@ $(document).ready(function() {
                     start: start,
                     end: end
                 };
-                $('#staffcalendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                $('#staffCalendar').fullCalendar('renderEvent', eventData, true); // stick? = true
             }
-            $('#staffcalendar').fullCalendar('unselect');
+            $('#staffCalendar').fullCalendar('unselect');
         },
         editable: true,
         eventLimit: true, // allow "more" link when too many events
