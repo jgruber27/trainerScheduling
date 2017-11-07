@@ -26,7 +26,7 @@
       .state('availabilityTable', {
         url: '/avail',
         templateUrl: 'modules/availabilities/client/views/availabilityIndex.html',
-        controller: 'AvailabilitiesListController',
+        controller: 'AvailabilitiesController',
         controllerAs: 'vm',
         data: {
           pageTitle: 'Availabilities'
