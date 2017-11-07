@@ -12,7 +12,7 @@
             <p class="help-block error-text" ng-message="required">Calendarlist name is required.</p>
           </div>
           <label class="control-label" for="trainer">Trainer</label>
-          <select ng-model="User" ng-options="x for x in User">
+          <select ng-model="User" ng-options="x for x in vm.authentication">
           </select>
           <input name="trainer" type="" ng-model="vm.calendarview.trainer" id="trainer" class="form-control" placeholder="Trainer" required>
           <div ng-messages="vm.form.calendarviewForm.trainer.$error" role="alert">

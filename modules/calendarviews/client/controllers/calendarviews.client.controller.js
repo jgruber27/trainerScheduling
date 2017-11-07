@@ -17,7 +17,7 @@
     vm.remove = remove;
     vm.save = save;
     vm.get = get;
-
+    console.log(vm.authentication);
     // Remove existing Calendarview
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
