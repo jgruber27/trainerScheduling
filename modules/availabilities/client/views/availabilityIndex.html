@@ -4,7 +4,7 @@
 <link rel="StyleSheet" href="style.css" type="text/css" media="screen">
 <link rel="StyleSheet" href="style2.css" type="text/css" media="screen">
 </head><body bgcolor="black"><http-equiv="pragma" content="NO-CACHE">
-<script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.8ggGBlnRYmw.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCORPt1ErXTGopWn2el2oYFxRcgjyw/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="https://apis.google.com/js/plusone.js" gapi_processed="true"></script><script async="" src="//connect.facebook.net/en_US/fbds.js"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script type="text/javascript">
+<script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.8ggGBlnRYmw.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCORPt1ErXTGopWn2el2oYFxRcgjyw/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="https://apis.google.com/js/plusone.js" gapi_processed="true"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-21209013-1']);
@@ -53,24 +53,6 @@ window._fbq.push(['track', '6024661912631', {'value':'0.01','currency':'USD'}]);
 <noscript>&lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6024661912631&amp;amp;cd[value]=0.01&amp;amp;cd[currency]=USD&amp;amp;noscript=1" /&gt;</noscript>
 
 
-
-
-
-<div id="MenuTop">
-  <div id="MenuTopLeft">
-    <a href="?About" "="">About When2meet</a>
-    <a href=".">Plan a New Event</a>
-    <a href=""><!-- My Events --></a>
-
-  </div>
-  <div id="MenuTopRight">
-    <a href=""><!-- Name --></a>
-    <a href=""><!-- Sign Out --></a>
-    
-  </div>
-<br clear="all">
-</div>
-
 <div id="MainBody" style="background:white; margin:0px;border:0px;padding:0px;">
 
 <script src="prototype.js" type="text/javascript"></script>
@@ -79,6 +61,7 @@ window._fbq.push(['track', '6024661912631', {'value':'0.01','currency':'USD'}]);
 <script type="text/javascript">
   jQuery.noConflict();
 
+  var UserID = 1;
   var AnchorRow=0;
   var AnchorColumn=0;
   var HoverRow=0;
@@ -568,7 +551,7 @@ window._fbq.push(['track', '6024661912631', {'value':'0.01','currency':'USD'}]);
 */
 
   function ProcessLogin() {
-    new Ajax.Request("ProcessLogin.php", {
+    /*new Ajax.Request("ProcessLogin.php", {
       method: "post",
       parameters: "id=6475996"
                +"&name="+document.getElementById('name').value
@@ -578,10 +561,10 @@ window._fbq.push(['track', '6024661912631', {'value':'0.01','currency':'USD'}]);
         PersonID = parseInt(t.responseText);
         if (PersonID) {
           UserID = PersonID;
-          ReColorIndividual();
-          document.getElementById("SignIn").style.display='none';
+          ReColorIndividual();*/
+          //document.getElementById("SignIn").style.display='none';
           document.getElementById("YouGrid").style.display='';
-          if (-1==PeopleIDs.indexOf(UserID)) {
+          /*if (-1==PeopleIDs.indexOf(UserID)) {
             PeopleIDs.push(UserID);
             PeopleNames.push(document.getElementById('name').value);
           }
@@ -591,7 +574,7 @@ window._fbq.push(['track', '6024661912631', {'value':'0.01','currency':'USD'}]);
         }
       }
     });
-    return false;
+    return false;*/
   }
   
   function SelectFromHere(Time) {
@@ -2035,14 +2018,7 @@ TimeOfSlot[671]=280280700;
 AvailableAtSlot[671]=new Array();
 var AvailableIDs=new Array();
 </script>
-<div id="NewEventNameDiv" style="padding:20px 0px 20px 20px;font-size:30px;">
 
-
-Availability Schedule<br><span style="font-size: 12px;">
-    To invite people to this event, you can <a href="mailto:?subject=Scheduling Availability Schedule&amp;body=Hi All,%0A%0AI'm trying to see when we're all available for &#10;Availability Schedule.%0A%0APlease visit%0A    https://www.when2meet.com/?6475996-yMyMW%0Ato &#10;let me know when you're available.%0A%0AThanks,%0A%0A">email them</a>, send them a <a href="https://www.facebook.com/dialog/send?app_id=259470627404374&amp;name=Scheduling+Availability+Schedule&amp;link=https://www.when2meet.com/?6475996-yMyMW&amp;redirect_uri=https://secure.atof.net/users/donengel/facebook/when2meet/thanks.html&amp;picture=https://www.when2meet.com/facebook/facebookLogoBig.jpg&amp;description=This+link+is+to+a+availability+survey+called%3A+Availability+Schedule.">Facebook 
-message</a>, or just direct them to https://www.when2meet.com/?6475996-yMyMW
-</span> 
-</div>
 
 <div onselectstart="return false;" style="width:50%;display:inline-block;*display:inline;zoom:1; white-space:nowrap;overflow:auto; vertical-align:top; text-align:center;"><div class="HalfPanel">
       <div id="SlotAvailability" style="display:none;">
@@ -2062,14 +2038,8 @@ message</a>, or just direct them to https://www.when2meet.com/?6475996-yMyMW
       <div id="SignIn">
         <div class="GridTitle">Sign In<br>
           <div class="GridSubtitle">
-            <table>
-            <tbody><tr><td>Your Name:</td><td align="left"><input style="width:150px" id="name"></td></tr>
-            <tr><td>Password (optional):</td><td align="left"><input style="width:150px" id="password" type="password"></td></tr>
-            </tbody></table>
-            <input type="button" value="Sign In" onclick="ProcessLogin()"><br><br>
-            Name/Password are only for this event.<br>
-            New to this event? Make up a password.<br>
-            Returning? Use the same name/password.
+
+            <input type="button" value="Sign In" onclick="ProcessLogin()">
           </div>
         </div>
       </div>

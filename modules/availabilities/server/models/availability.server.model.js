@@ -10,6 +10,7 @@ var mongoose = require('mongoose'),
  * Availability Schema
  */
 var AvailabilitySchema = new Schema({
+<<<<<<< HEAD
   monday: {
     val_7am: {
       type: Boolean,
@@ -320,6 +321,8 @@ var AvailabilitySchema = new Schema({
       required: false
     }, //9pm
   },
+=======
+>>>>>>> 2e510b78659440176303e34783f7c05e1d7c159d
   created: {
     type: Date,
     default: Date.now
