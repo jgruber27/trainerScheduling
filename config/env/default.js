@@ -4,7 +4,7 @@ module.exports = {
   app: {
     title: 'Allegiance Athletics',
     description: 'Staff Availability for Allegiance Athletics',
-    keywords: 'mongodb, express, angularjs, node.js, mongoose, passport',
+    keywords: 'Staff Scheduling',
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
   },
   port: process.env.PORT || 3000,
