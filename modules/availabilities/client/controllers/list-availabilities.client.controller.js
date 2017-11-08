@@ -5,11 +5,12 @@
     .module('availabilities')
     .controller('AvailabilitiesListController', AvailabilitiesListController);
 
-  AvailabilitiesListController.$inject = ['AvailabilitiesService'];
+  AvailabilitiesListController.$inject = ['AvailabilitiesService', 'Authentication'];
 
-  function AvailabilitiesListController(AvailabilitiesService) {
+  function AvailabilitiesListController(AvailabilitiesService, Authentication) {
     var vm = this;
 
+    vm.authentication = Authentication;
     vm.availabilities = AvailabilitiesService.query();
   }
 }());
