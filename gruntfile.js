@@ -12,6 +12,7 @@ var _ = require('lodash'),
   testConfig = require('./config/env/test'),
   fs = require('fs'),
   path = require('path');
+  //server = require('./server');
 
 module.exports = function (grunt) {
   // Project Configuration
@@ -300,8 +301,10 @@ module.exports = function (grunt) {
     var path = require('path');
     var app = require(path.resolve('./config/lib/app'));
     var server = app.start(function () {
+      
       done();
     });
+
   });
 
   // Lint CSS and JavaScript files.

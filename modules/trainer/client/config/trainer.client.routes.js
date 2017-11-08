@@ -43,15 +43,15 @@
       });
 
   }
-  getTrainer.$inject = ['$stateParams', 'TrainerService'];
+  getTrainer.$inject = ['$stateParams', 'trainerService'];
 
-  function getTrainer($stateParams, trainerService) {
-    return trainerService.get({
+  function getTrainer($stateParams, TrainerService) {
+    return TrainerService.get({
       trainerId: $stateParams.trainerId
     }).$promise;
   }
 
-  newTrainer.$inject = ['TrainerService'];
+  newTrainer.$inject = ['trainerService'];
 
   function newTrainer(TrainerService) {
     return new TrainerService();

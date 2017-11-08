@@ -77,7 +77,7 @@ exports.delete = function(req, res) {
  * List of Trainers
  */
 exports.list = function(req, res) {
-  Trainer.find(function(err, trainer) {
+  Trainer.find().populate('user', 'displayName').exec(function(err, trainer) {
     if (err) {
       console.log(err);
       res.status(400).send(err);
