@@ -83,7 +83,7 @@
     }
   </style>
 
-  <h1>Availabilities {{vm.authentication.user.displayName}}</h1>
+  <h1>Availabilities</h1>
 
   <table class="blueTable">
     <thead>
@@ -102,19 +102,19 @@
     <tbody>
       <tr ng-repeat="availability in vm.availabilities | filter:vm.authentication.user.displayName">
         <td>7:00 am</td>
-        <td>{{availability.monday.val_7am}}{{availability.user._id}}</td>
+        <td>{{availability.monday.val_7am}}</td>
         <!-- Monday 7am -->
-        <td>{{availability.tuesday.val_7am}}{{availability.user.displayName}}</td>
+        <td>{{availability.tuesday.val_7am}}</td>
         <!-- Tuesday 7am -->
-        <td>{{availability.wednesday.val_7am}}{{availability.user.displayName}}</td>
+        <td>{{availability.wednesday.val_7am}}</td>
         <!-- Wednesday 7am -->
-        <td>{{availability.thursday.val_7am}}{{availability.user.displayName}} </td>
+        <td>{{availability.thursday.val_7am}} </td>
         <!-- Thursday 7 am -->
-        <td>{{availability.friday.val_7am}}{{availability.user.displayName}}</td>
+        <td>{{availability.friday.val_7am}}</td>
         <td> </td>
         <td> </td>
       </tr>
-      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+      <tr ng-repeat="availability in vm.availabilities | filter:vm.authentication.user.displayName">
         <td>8:00 am</td>
         <td>{{availability.monday.val_8am}}</td>
         <td>{{availability.tuesday.val_8am}}</td>
@@ -124,7 +124,7 @@
         <td> </td>
         <td> </td>
       </tr>
-      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+      <tr ng-repeat="availability in vm.availabilities | filter:vm.authentication.user.displayName">
         <td>9:00 am</td>
         <td>{{availability.monday.val_9am}}</td>
         <td>{{availability.tuesday.val_9am}}</td>
@@ -134,7 +134,7 @@
         <td> </td>
         <td> </td>
       </tr>
-      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+      <tr ng-repeat="availability in vm.availabilities | filter:vm.authentication.user.displayName">
         <td>10:00 am</td>
         <td>{{availability.monday.val_10am}}</td>
         <td>{{availability.tuesday.val_10am}}</td>
@@ -144,7 +144,7 @@
         <td> </td>
         <td> </td>
       </tr>
-      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+      <tr ng-repeat="availability in vm.availabilities | filter:vm.authentication.user.displayName">
         <td>11:00 am</td>
         <td>{{availability.monday.val_11am}}</td>
         <td>{{availability.tuesday.val_11am}}</td>
@@ -154,7 +154,7 @@
         <td> </td>
         <td> </td>
       </tr>
-      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+      <tr ng-repeat="availability in vm.availabilities | filter:vm.authentication.user.displayName">
         <td>12:00 pm</td>
         <td>{{availability.monday.val_12pm}}</td>
         <td>{{availability.tuesday.val_12pm}}</td>
@@ -164,7 +164,7 @@
         <td> </td>
         <td> </td>
       </tr>
-      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+      <tr ng-repeat="availability in vm.availabilities | filter:vm.authentication.user.displayName">
         <td>1:00 pm</td>
         <td>{{availability.monday.val_1pm}}</td>
         <td>{{availability.tuesday.val_1pm}}</td>
@@ -174,7 +174,7 @@
         <td> </td>
         <td> </td>
       </tr>
-      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+      <tr ng-repeat="availability in vm.availabilities | filter:vm.authentication.user.displayName">
         <td>2:00 pm</td>
         <td>{{availability.monday.val_2pm}}</td>
         <td>{{availability.tuesday.val_2pm}}</td>
@@ -184,7 +184,7 @@
         <td> </td>
         <td> </td>
       </tr>
-      <tr ng-if="$first" ng-repeat="availability in vm.availabilities track by $index">
+      <tr ng-repeat="availability in vm.availabilities | filter:vm.authentication.user.displayName">
         <td>3:00 pm</td>
         <td>{{availability.monday.val_3pm}}</td>
         <td>{{availability.tuesday.val_3pm}}</td>
@@ -197,7 +197,7 @@
     </tbody>
   </table>
 
-  <div>
-    <button type="submit" class="btn btn-primary"><a class="availability-update" ui-sref="availabilities">Update</a></button>
+  <div ng-repeat="availability in vm.availabilities | filter:vm.authentication.user.displayName">
+    <button type="submit" class="btn btn-primary"><a class="availability-update" ui-sref="availabilities.edit({availabilityId: availability._id})">Update</a></button>
   </div>
 </section>

@@ -40,7 +40,7 @@
       }
 
       function successCallback(res) {
-        $state.go('availabilities.view', {
+        $state.go('availabilities.list', {
           availabilityId: res._id
         });
       }
