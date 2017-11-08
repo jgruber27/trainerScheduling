@@ -5,7 +5,7 @@
 
   angular
     .module('trainer')
-    .factory('TrainerService', TrainerService);
+    .factory('trainerService', TrainerService);
 
   TrainerService.$inject = ['$resource'];
 
