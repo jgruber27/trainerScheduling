@@ -1,10 +1,11 @@
+
 (function () {
   'use strict';
 
   // Calendarviews controller
   angular
     .module('calendarviews')
-    .controller('CalendarviewsController', CalendarviewsController);
+    .controller('CalendarviewsController', CalendarviewsController,moment);
 
   CalendarviewsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'calendarviewResolve'];
 
@@ -26,6 +27,7 @@
 
     // Save Calendarview
     function save(isValid) {
+      alert(moment());
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.calendarviewForm');
         return false;
