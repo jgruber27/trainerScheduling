@@ -11,6 +11,7 @@ module.exports = {
       ],
       js: [
         'public/lib/moment/min/moment.min.js',
+        'public/lib/date.js/build/date.js',
         'public/lib/jquery/dist/jquery.min.js',
         'public/lib/fullcalendar/dist/fullcalendar.min.js',
         'public/lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
