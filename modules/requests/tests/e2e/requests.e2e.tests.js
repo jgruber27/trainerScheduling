@@ -42,7 +42,7 @@ describe('Requests E2E Tests:', function () {
     // Sign out user.
     browser.get('http://localhost:3000/authentication/signout');
     // Delete cookies.
-    browser.driver.manage().deleteAllCookies();
+    //browser.driver.manage().deleteAllCookies();
    };
 
   describe('Test Requests page', function () {
