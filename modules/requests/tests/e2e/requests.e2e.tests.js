@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Requests E2E Tests:', function () {
-  var myRequest = {
+  var test_request = {
     name: 'Time off - E2E testing',
     user: 'Lisbe',
     shiftTime: 'October 31st, 1-3pm',
@@ -57,41 +57,29 @@ describe('Requests E2E Tests:', function () {
 
     it('Test creating a new request', function () {
       //Make sure user is signed in.
-      signin(user_staff);
-      console.log('----------------------- Signed in ---------------------');
-      browser.sleep(5000);
+      signin(user_admin);
+      browser.waitForAngular();
+      browser.sleep(2000);
 
       //Creating a new request.
       browser.get('http://localhost:3000/requests/create');
-      //Do not rely on async calls, its just directly interacts with the dom and inserts the keys into the input field.
-      //browser.ignoreSynchronization = true;
-      //browser.driver.findElement(protractor.By.id('name')).sendKeys('batman');
       browser.waitForAngular();
-      browser.sleep(5000);
+      browser.sleep(2000);
 
-      console.log('------------------------------------------------------------');
-      element(by.model('vm.request.name')).sendKeys('Time off');
-      element(by.model('vm.request.class')).sendKeys('Heu');
-      element(by.model('vm.request.shiftTime')).sendKeys('October 3, 2017');
-      element(by.model('vm.request.reason')).sendKeys('Sick');
+      element(by.model('vm.request.name')).sendKeys(test_request.name);
+      element(by.model('vm.request.class')).sendKeys(test_request.class);
+      element(by.model('vm.request.shiftTime')).sendKeys(test_request.shiftTime);
+      element(by.model('vm.request.reason')).sendKeys(test_request.reason);
       //Click the button to create the request.
-      //element(by.css('.btn btn-default')).click();
       element(by.css('button[type="submit"]')).click();
-
-        //browser.sleep(4000);
       browser.waitForAngular();
-      //Check that it goes to the right link.
-      //browser.get('http://localhost:3000/requests/' + myRequest._id);
-      //browser.waitForAngular();
-      //element(by.id('class')).sendKeys(request.class);
-      //element(by.id('shiftTime')).sendKeys(request.shiftTime);
-      //element(by.id('reason')).sendKeys(request.reason);
-      // element(by.css('#class')).sendKeys(request.class);
-      // element(by.css('#shiftTime')).sendKeys(request.shiftTime);
-      // element(by.css('#reason')).sendKeys(request.reason);
 
-      // Make sure user is sign out
-      signout();
+      //Check that it goes to the right link.
+      browser.get('http://localhost:3000/requests/*');
+      browser.waitForAngular();
+
+      // Make sure user is signed out
+      //signout();
     });
 
     // it('Accept request and go to calendar', function () {
