@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Requests E2E Tests:', function () {
-  var request = {
+  var myRequest = {
     name: 'Time off - E2E testing',
     user: 'Lisbe',
     shiftTime: 'October 31st, 1-3pm',
@@ -65,17 +65,20 @@ describe('Requests E2E Tests:', function () {
       //browser.ignoreSynchronization = true;
       //browser.driver.findElement(protractor.By.id('name')).sendKeys('batman');
       browser.waitForAngular();
-      element(by.model('vm.request.name')).sendKeys(request.name);
-      element(by.model('vm.request.class')).sendKeys(request.class);
-      element(by.model('vm.request.shiftTime')).sendKeys(request.shiftTime);
-      element(by.model('vm.request.reason')).sendKeys(request.reason);
+      browser.sleep(5000);
+
+      console.log('------------------------------------------------------------');
+      element(by.model('vm.request.name')).sendKeys('Time off');
+      element(by.model('vm.request.class')).sendKeys('Heu');
+      element(by.model('vm.request.shiftTime')).sendKeys('October 3, 2017');
+      element(by.model('vm.request.reason')).sendKeys('Sick');
       //Click the button to create the request.
       element(by.css('.btn btn-default')).click();
       //browser.sleep(4000);
       browser.waitForAngular();
       //Check that it goes to the right link.
-      browser.get('http://localhost:3000/requests/' + request._id);
-      browser.waitForAngular();
+      //browser.get('http://localhost:3000/requests/' + myRequest._id);
+      //browser.waitForAngular();
       //element(by.id('class')).sendKeys(request.class);
       //element(by.id('shiftTime')).sendKeys(request.shiftTime);
       //element(by.id('reason')).sendKeys(request.reason);
@@ -89,7 +92,7 @@ describe('Requests E2E Tests:', function () {
 
     it('Accept request and go to calendar', function () {
       //TODO: Fix this and pass the ID - Ask Kurt!!
-      browser.get('http://localhost:3000/requests/' + request._id);
+      browser.get('http://localhost:3000/requests/' + myRequest._id);
 
       element(by.css('[ng-click="vm.removeAndGoToCalendar()"]')).click();
       browser.sleep(4000);
@@ -101,7 +104,7 @@ describe('Requests E2E Tests:', function () {
     });
 
     it('Decline and delete request', function () {
-      browser.get('http://localhost:3000/requests/' + request._id);
+      browser.get('http://localhost:3000/requests/' + myRequest._id);
 
       element(by.css('[ng-click="vm.remove()"]')).click();
       browser.sleep(4000);
