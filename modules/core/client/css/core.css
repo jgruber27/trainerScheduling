@@ -37,10 +37,17 @@ a:hover .header-profile-image {
 }
 
 .scroll {
-  width: 1150px;
+  width: auto;
   height: 750px;
   overflow: auto;
 }
+
+.homescroll {
+  width: auto;
+  height: 525px;
+  overflow: auto;
+}
+
 
 .navbar-custom {
     background-color:#672C8E;

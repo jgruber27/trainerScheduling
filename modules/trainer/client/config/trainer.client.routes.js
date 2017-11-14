@@ -40,13 +40,22 @@
         data: {
           roles: ['admin']
         }
+      })
+      .state('viewAnnouncement', {
+        url: '/view/:trainerId',
+        templateUrl: 'modules/trainer/client/views/viewAnnouncement.client.view.html',
+        controller: 'TrainerController',
+        controllerAs: 'vm',
+        resolve: {
+          trainerResolve: getTrainer
+        }
       });
 
   }
   getTrainer.$inject = ['$stateParams', 'TrainerService'];
 
-  function getTrainer($stateParams, trainerService) {
-    return trainerService.get({
+  function getTrainer($stateParams, TrainerService) {
+    return TrainerService.get({
       trainerId: $stateParams.trainerId
     }).$promise;
   }
