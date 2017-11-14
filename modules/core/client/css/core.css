@@ -62,6 +62,7 @@ a:hover .header-profile-image {
 
 .navbar-custom .navbar-nav > li > a {
     color:#ffffff;
+    text-shadow: none;
 }
 
 .navbar-custom .navbar-nav > .active > a {
