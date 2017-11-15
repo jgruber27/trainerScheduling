@@ -45,7 +45,7 @@
       }*/
       if(vm.blog.video){
         var re = /https?:\/\/(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\S*[^\w\s-])([\w-]{11})(?=[^\w-]|$)(?![?=&+%\w.-]*(?:['"][^<>]*>|<\/a>))[?=&+%\w.-]*/ig;
-        vm.blog.video = vm.blog.video.replace(re, "http://www.youtube.com/embed/$1");
+        vm.blog.video = vm.blog.video.replace(re, 'http://www.youtube.com/embed/$1');
       }
       // TODO: move create/update logic to service
       if (vm.blog._id) {

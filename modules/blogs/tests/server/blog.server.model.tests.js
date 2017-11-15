@@ -4,14 +4,14 @@
  */
 var should = require('should'),
   mongoose = require('mongoose'),
-  //User = mongoose.model('User', new mongoose.Schema()),
+  User = mongoose.model('User'),
   Blog = mongoose.model('Blog');
 
 /**
  * Globals
  */
 
-var user, blog;
+var user, blog, blog_id;
 
 
 blog = {
@@ -45,7 +45,7 @@ describe('Blog Model Unit Tests:', function() {
         user: user
       });
 
-      done();C:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\serverC:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\serverC:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\serverC:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\server
+      done();
     });
   });
 

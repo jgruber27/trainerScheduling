@@ -104,7 +104,7 @@ exports.requestByID = function(req, res, next, id) {
       return next(err);
     } else if (!trainer) {
       return res.status(404).send({
-        message: 'No Trainer with that identifier has been found'
+        message: 'No Announcement with that identifier has been found'
       });
     }
     req.trainer = trainer;

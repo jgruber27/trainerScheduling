@@ -55,8 +55,7 @@
   getTrainer.$inject = ['$stateParams', 'trainerService'];
 
   function getTrainer($stateParams, TrainerService) {
-    console.log("Please");
-      return TrainerService.get({
+    return TrainerService.get({
       trainerId: $stateParams.trainerId
     }).$promise;
   }
