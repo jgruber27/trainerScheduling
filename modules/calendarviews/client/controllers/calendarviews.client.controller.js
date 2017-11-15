@@ -26,7 +26,7 @@
 
     // Save Calendarview
     function save(isValid) {
-      alert(vm.calendarview.start);
+      console.log(vm.calendarview.end);
       //alert(Date.parse('11/10/2017 1:13 PM').toISOString());
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.calendarviewForm');

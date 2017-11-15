@@ -23,14 +23,14 @@ var CalendarviewSchema = new Schema({
     trim: true
   },
   start: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    default: '',
     required: 'Please fill in start',
     trim: true
   },
   end: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    default: '',
     required: 'Please fill in end',
     trim: true
   },
