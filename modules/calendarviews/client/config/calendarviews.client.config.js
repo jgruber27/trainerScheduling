@@ -13,7 +13,7 @@
       title: 'Calendarviews',
       state: 'calendarviews',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user','admin']
     });
 
     // Add the dropdown list item
@@ -26,7 +26,7 @@
     menuService.addSubMenuItem('topbar', 'calendarviews', {
       title: 'Create Calendarview',
       state: 'calendarviews.create',
-      roles: ['user']
+      roles: ['admin']
     });
   }
 }());

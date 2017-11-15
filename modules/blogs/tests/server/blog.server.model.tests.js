@@ -10,7 +10,9 @@ var should = require('should'),
 /**
  * Globals
  */
-var blog, blog_id;
+
+var user, blog;
+
 
 blog = {
   name: 'title',
@@ -24,7 +26,9 @@ describe('Blog Model Unit Tests:', function() {
 
   this.timeout(10000);
 
-  /*beforeEach(function(done) {
+
+  beforeEach(function(done) {
+
     user = new User({
       firstName: 'Full',
       lastName: 'Name',
@@ -37,35 +41,30 @@ describe('Blog Model Unit Tests:', function() {
     user.save(function() {
       blog = new Blog({
         name: 'Blog Name',
+        content: 'Blog content',
         user: user
       });
 
       done();C:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\serverC:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\serverC:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\serverC:\Users\James Gruber\Desktop\School Filing Cabinet\Software Engineering\trainerScheduling\modules\blogs\tests\server
     });
-  });*/
+  });
 
-  describe('Saving a blog to the database', function(done) {
+  describe('Method Save', function(done) {
     
-    this.timeout(10000);
 
     it('should be able to save a new blog', function(done) {
-      new Blog({
-        name: 'title',
-        content: 'content',
-        video: '',
-      }).save(function(err){
+      this.timeout(10000);
+      return blog.save(function(err){
         should.not.exist(err);
         blog_id = blog._id;
         done();
       });
     });
 
+    it('Should not save to the db if Blog name is not provided', function(done){
+      blog.name = '';
 
-    it('Should not save to the db if Blog title is not provided', function(done){
-      new Blog({
-        content: 'content',
-        video: '',
-      }).save(function(err){
+      return blog.save(function(err){
         should.exist(err);
         done();
       });
@@ -77,9 +76,7 @@ describe('Blog Model Unit Tests:', function() {
 
   /*afterEach(function(done) {
     Blog.remove().exec(function() {
-      User.remove().exec(function() {
-        done();
-      });
+      User.remove().exec(done);
     });
   });*/
   afterEach(function(done){
@@ -92,4 +89,17 @@ describe('Blog Model Unit Tests:', function() {
       done();
     }
   });
+  /*afterEach(function(done){
+    if(blog_id){
+      Blog.remove({ _id: blog_id }).exec(function(){
+        blog_id = null;
+        done();
+      });
+    } else{
+      done();
+    }
+  });*/
 });
+
+
+

@@ -34,6 +34,7 @@ exports.create = function(req, res) {
 exports.read = function(req, res) {
   // Puts mongoose doc into JSON format
   var trainer = req.trainer ? req.trainer.toJSON() : {};
+  trainer.isCurrentUserOwner = req.user && trainer.user && trainer.user._id.toString() === req.user._id.toString();
   res.jsonp(trainer);
 };
 
