@@ -1,10 +1,21 @@
 body, html {
   width: 100%;
   height: 100%;
+  background-color: #FFFFFF;
 }
 
-body, h1, h2, h3, h4, h5, h6 {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Nunito Sans', sans-serif;
   font-weight: 700;
 }
 
@@ -62,6 +73,8 @@ a:hover .header-profile-image {
 
 .navbar-custom .navbar-nav > li > a {
     color:#ffffff;
+    font-size: 13px;
+    font-weight: 600;
     text-shadow: none;
 }
 
@@ -84,6 +97,7 @@ a:hover .header-profile-image {
     color: #FF7E00;
     text-decoration: none;
     text-shadow: none;
+    font-weight: 500;
 }
 
 .navbar-custom .navbar-brand:hover { 
@@ -95,3 +109,40 @@ a:hover .header-profile-image {
 .navbar-custom .icon-bar {
     background-color: #33aa33;
 }
+
+.intro {
+  text-align: center;
+}
+
+.intro-text {
+  margin-left: 25px;
+  font-size: 40px;
+  font-family: 'Nunito Sans', 'Helvetica', sans-serif;
+  font-weight: 200;
+  color: #FF7E00;
+  letter-spacing: -2px;
+}
+
+.intro img {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.page-container {
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto 0 auto;
+}
+
+.page-title {
+  border-bottom: 1px solid #DDD;
+  border-bottom-width: 80%;
+}
+
+/*.page-text {
+  margin-left: 20px;
+}*/
