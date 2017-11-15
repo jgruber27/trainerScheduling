@@ -10,14 +10,14 @@
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: 'Blogs',
-      state: 'blogs',
-      type: 'dropdown',
+      title: 'Blog',
+      state: 'blogs.list',
+      //type: 'dropdown',
       roles: ['user','admin']
     });
 
     // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'blogs', {
+    /*menuService.addSubMenuItem('topbar', 'blogs', {
       title: 'List Blogs',
       state: 'blogs.list'
     });
@@ -27,6 +27,6 @@
       title: 'Create Blog',
       state: 'blogs.create',
       roles: ['user','admin']
-    });
+    });*/
   }
 }());

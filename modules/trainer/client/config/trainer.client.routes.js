@@ -41,8 +41,14 @@
           roles: ['admin']
         }
       })
+      .state('announcementArchive', {
+        url: '/announcements/archive',
+        templateUrl: 'modules/trainer/client/views/announcementArchive.html',
+        controller: 'TrainerListController',
+        controllerAs: 'vm',
+      })
       .state('viewAnnouncement', {
-        url: '/view/:trainerId',
+        url: '/announcements/view/:trainerId',
         templateUrl: 'modules/trainer/client/views/viewAnnouncement.client.view.html',
         controller: 'TrainerController',
         controllerAs: 'vm',

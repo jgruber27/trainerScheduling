@@ -11,14 +11,21 @@
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: 'Announcements',
-      state: 'trainer',
-      type: 'dropdown',
-      roles: ['user', 'admin']
+      title: 'Home',
+      state: 'home',
+      //type: 'dropdown',
+      roles: ['user']
+    });
+
+    menuService.addMenuItem('topbar', {
+      title: 'Home',
+      state: 'homeadmin',
+      //type: 'dropdown',
+      roles: ['admin']
     });
 
     // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'trainer', {
+    /*menuService.addSubMenuItem('topbar', 'trainer', {
       title: 'Staff Announcements Page',
       state: 'home',
       roles: ['user', 'admin']
@@ -29,6 +36,6 @@
       title: 'Admin Announcements Page',
       state: 'homeadmin',
       roles: ['admin']
-    });
+    });*/
   }
 }());
