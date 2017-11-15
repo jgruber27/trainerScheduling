@@ -18,6 +18,12 @@
     vm.remove = remove;
     vm.save = save;
 
+    $scope.tinymceOptions = {
+      plugins: 'media image',
+      skin: 'lightgray',
+      theme: 'modern'
+    }
+
     $scope.trustSrc = function(src) {
       return $sce.trustAsResourceUrl(src);
     };
