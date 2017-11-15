@@ -26,6 +26,23 @@ exports.update = function (req, res) {
   user.lastName = req.body.lastName;
   user.displayName = user.firstName + ' ' + user.lastName;
   user.roles = req.body.roles;
+  user.positions = req.body.positions;
+  user.birthday = req.body.birthday;
+  user.officialTitle = req.body.officialTitle;
+  user.hireDate = req.body.hireDate;
+  user.certifications = req.body.certifications
+  user.daysLate = user.firstName + ' has been late ' + req.body.daysLate + ' times';
+  user.daysOff = user.firstName + ' has requested ' + req.body.daysOff + ' days off';
+  user.favoriteColor = req.body.favoriteColor;
+  user.favoriteCake = req.body.favoriteCake;
+  user.favoriteKidsBook = req.body.favoriteKidsBook;
+  user.favoriteAnimal = req.body.favoriteAnimal;
+  user.favoriteGymReason = req.body.favoriteGymReason;
+  user.favoriteOther = req.body.favoriteOther;
+  user.miscNotes = req.body.miscNotes;
+  user.dateOfTerm = req.body.dateOfTerm;
+  user.ReasonForTerm = req.body.ReasonForTerm;
+
 
   user.save(function (err) {
     if (err) {

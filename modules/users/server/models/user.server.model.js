@@ -79,10 +79,10 @@ var UserSchema = new Schema({
   roles: {
     type: [{
       type: String,
-      enum: ['user', 'admin']
+      enum: ['user', 'admin', 'inactive']
     }],
     default: ['user'],
-    required: 'Please provide at least one role'
+    required: 'Please provide at least one role (user, admin, or inactive)'
   },
   updated: {
     type: Date
@@ -90,6 +90,66 @@ var UserSchema = new Schema({
   created: {
     type: Date,
     default: Date.now
+  },
+  hireDate: {
+    type: String,
+    default: ''
+  },
+  certifications: {
+    type: String,
+    default: ''
+  },
+  officialTitle: {
+    type: String,
+    default: ''
+  },
+  miscNotes: {
+    type: String,
+    default: ''
+  },
+  daysLate: {
+    type: String,
+    default: ''
+  },
+  daysOff: {
+    type: String,
+    default: ''
+  },
+  dateofTerm: {
+    type: String,
+    default: 'Currently Employed'
+  },
+  reasonForTerm: {
+    type: String,
+    default: 'N/A'
+  },
+  birthday: {
+    type: String,
+    default: ''
+  },
+  favoriteColor: {
+    type: String,
+    default: ''
+  },
+  favoriteCake: {
+    type: String,
+    default: ''
+  },
+  favoriteAnimal: {
+    type: String,
+    default: ''
+  },
+  favoriteKidsBook: {
+    type: String,
+    default: ''
+  },
+  favoriteGymReason: {
+    type: String,
+    default: ''
+  },
+  favoriteOther: {
+    type: String,
+    default: ''
   },
   /* For reset password */
   resetPasswordToken: {
