@@ -19,14 +19,16 @@
     vm.save = save;
 
     $scope.tinymceOptions = {
-      plugins: 'media image',
+      plugins: 'media image legacyoutput',
+      height: '500',
       skin: 'lightgray',
+      formats: {
+        underline : {inline : 'u', exact : true}
+      },
       theme: 'modern'
-    }
-
-    $scope.trustSrc = function(src) {
-      return $sce.trustAsResourceUrl(src);
     };
+
+    $scope.trustSrc = $sce.trustAsHtml(vm.blog.content);
     // Remove existing Blog
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {

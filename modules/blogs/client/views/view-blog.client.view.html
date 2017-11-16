@@ -8,7 +8,7 @@
        ui-sref="blogs.edit({ blogId: vm.blog._id })">
       <i class="glyphicon glyphicon-edit"></i>
     </a>
-    <a class="btn btn-primary" ng-click="vm.remove()">
+    <a class="btn btn-danger" ng-click="vm.remove()">
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
@@ -22,9 +22,8 @@
       <span ng-if="!vm.blog.user">Deleted User</span>
     </em>
   </small>
-  <p class="lead" ng-bind="vm.blog.content"></p>
+  <p class="lead" ng-bind-html="trustSrc"></p>
   <small>
     Tags: <span ng-bind="vm.blog.tags"></span>
   </small>
-  <iframe ng-if="vm.blog.video" style="margin-left: 250px" height="400" width="600" ng-src="{{trustSrc(vm.blog.video)}}" allowfullscreen></iframe>
 </section>
