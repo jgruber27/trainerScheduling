@@ -21,9 +21,9 @@
     $scope.tinymceOptions = {
       plugins: 'media image legacyoutput',
       height: '500',
-      skin: 'lightgray',
+      skin: 'aa-editor',
       formats: {
-        underline : {inline : 'u', exact : true}
+        underline : { inline : 'u', exact : true }
       },
       theme: 'modern'
     };
