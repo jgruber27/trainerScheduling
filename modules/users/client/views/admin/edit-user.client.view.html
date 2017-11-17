@@ -24,72 +24,123 @@
           <div class="controls">
             <input class="form-control" type="text" name="roles" ng-model="user.roles" id="roles" ng-list required />
             <div ng-messages="userForm.roles.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">At least one role is required.</p>
+              <p class="help-block error-text" ng-message="required">User or Admin?</p>
+            </div>
+          </div>
+
+        </div>
+         <div class="form-group" show-errors>
+          <label class="control-label" for="position">Position</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="position" ng-model="user.position" id="position" ng-list required />
+            <div ng-messages="userForm.position.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Position at gym required.</p>
             </div>
           </div>
         </div>
+
         <div class="form-group" show-errors>
-          <label for="birthday">Birthday (MM/DD/YYYY)</label>
-          <input type="text" id="birthday" name="birthday" class="form-control" ng-model="user.birthday" placeholder="Birthday">
+          <label class="control-label" for="birthday">Birthday</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="birthday" ng-model="user.birthday" id="birthday" ng-list required />
+            <div ng-messages="userForm.birthday.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Birthday required.</p>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="hireDate">Hire Date (MM/DD/YYYY)</label>
-          <input type="text" id="hireDate" name="hireDate" class="form-control" ng-model="user.hireDate" placeholder="hireDate">
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="officialTitle">Official Title</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="officialTitle" ng-model="user.officialTitle" id="officialTitle" ng-list required />
+            <div ng-messages="userForm.officialTitle.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Official Title required.</p>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="certifications">Certifications</label>
-          <input type="text" id="certifications" name="certifications" class="form-control" ng-model="user.certifications" placeholder="Certifications">
+        
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="miscNotes">Miscellaneous Notes</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="miscNotes" ng-model="user.miscNotes" id="miscNotes"/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="officialTitle">Official Title</label>
-          <input type="text" id="officialTitle" name="officialTitle" class="form-control" ng-model="user.officialTitle" placeholder="Official Title">
+        
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="favoriteColor">Favorite Color</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="favoriteColor" ng-model="user.favoriteColor" id="favoriteColor"/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="favoriteColor">Favorite Color</label>
-          <input type="text" id="favoriteColor" name="favoriteColor" class="form-control" ng-model="user.favoriteColor" placeholder="Favorite Color">
+        
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="favoriteAnimal">Favorite Animal</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="favoriteAnimal" ng-model="user.favoriteAnimal" id="favoriteAnimal"/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="favoriteCake">Favorite Cake Flavor</label>
-          <input type="text" id="favoriteCake" name="favoriteCake" class="form-control" ng-model="user.favoriteCake" placeholder="Favorite Cake Flavor">
+        
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="favoriteCake">Favorite Cake Flavor</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="favoriteCake" ng-model="user.favoriteCake" id="favoriteCake"/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="favoriteAnimal">Favorite Animal</label>
-          <input type="text" id="favoriteAnimal" name="favoriteAnimal" class="form-control" ng-model="user.favoriteAnimal" placeholder="Favorite Animal">
+        
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="favoriteKidsBook">Favorite Kids Book</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="favoriteKidsBook" ng-model="user.favoriteKidsBook" id="favoriteKidsBook"/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="favoriteGymReason">Favorite Reason to Work at Gym</label>
-          <input type="text" id="favoriteGymReason" name="favoriteGymReason" class="form-control" ng-model="user.favoriteGymReason" placeholder="Favorite Gym Reason">
+        
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="favoriteReasonToWorkAtGym">Favorite Reason to Work At the Gym</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="favoriteReasonToWorkAtGym" ng-model="user.favoriteReasonToWorkAtGym" id="favoriteReasonToWorkAtGym"/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="favoriteKidsBook">Favorite Kids Book</label>
-          <input type="text" id="favoriteKidsBook" name="favoriteKidsBook" class="form-control" ng-model="user.favoriteKidsBook" placeholder="Favorite Kids Book">
+
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="favoriteOther">Favorite Anything Else!</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="favoriteOther" ng-model="user.favoriteOther" id="favoriteOther"/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="favoriteOther">Random Fact About Person</label>
-          <input type="text" id="favoriteOther" name="favoriteOther" class="form-control" ng-model="user.favoriteOther" placeholder="Random Fact!">
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="dateOfTermination">Date of Termination</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="dateOfTermination" ng-model="user.dateOfTermination" id="dateOfTermination"/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="miscNotes">Miscellaneous Notes</label>
-          <input type="text" id="miscNotes" name="miscNotes" class="form-control" ng-model="user.miscNotes" placeholder="Miscellaneous Notes">
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="terminationNotes">Termination Notes</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="terminationNotes" ng-model="user.terminationNotes" id="terminationNotes"/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="daysLate">Days Late</label>
-          <input type="text" id="dateOfTerms" name="daysLate" class="form-control" ng-model="user.daysLate" placeholder="Days Late">
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="active">Status</label>
+          <div class="controls">
+            <input class="form-control" type="text" name="active" ng-model="user.active" id="active"/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="daysOff">Number of Days Requested Off</label>
-          <input type="text" id="daysOff" name="daysOff" class="form-control" ng-model="user.daysOff" placeholder="Days OFf">
-        </div>
-        <div class="form-group">
-          <label for="dateOfTerms">Date of Termination</label>
-          <input type="text" id="dateOfTerms" name="dateOfTerms" class="form-control" ng-model="user.dateOfTerms" placeholder="MM/DD/YYYY">
-        </div>
-        <div class="form-group">
-          <label for="ReasonForTerms">Termination Notes</label>
-          <input type="text" id="ReasonForTerms" name="ReasonForTerms" class="form-control" ng-model="user.ReasonForTerms" placeholder="Termination Notes">
-        </div>
+
         <div class="form-group">
           <input type="submit" value="Update" class="btn btn-default">
+        </div>
+        <div ng-show="error" class="text-danger">
+          <strong ng-bind="error"></strong>
         </div>
       </fieldset>
     </form>

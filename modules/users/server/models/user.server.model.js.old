@@ -63,9 +63,33 @@ var UserSchema = new Schema({
     type: String,
     default: ''
   },
-  birthday: {
+  salt: {
+    type: String
+  },
+  profileImageURL: {
     type: String,
-    default: ''
+    default: 'modules/users/client/img/profile/default.png'
+  },
+  provider: {
+    type: String,
+    required: 'Provider is required'
+  },
+  providerData: {},
+  additionalProvidersData: {},
+  roles: {
+    type: [{
+      type: String,
+      enum: ['user', 'admin', 'inactive']
+    }],
+    default: ['user'],
+    required: 'Please provide at least one role (user, admin, or inactive)'
+  },
+  updated: {
+    type: Date
+  },
+  created: {
+    type: Date,
+    default: Date.now
   },
   hireDate: {
     type: String,
@@ -73,15 +97,11 @@ var UserSchema = new Schema({
   },
   certifications: {
     type: String,
-    default: 'None'
-  },
-  positions: {
-    type: String,
-    default: 'Employee'
+    default: ''
   },
   officialTitle: {
     type: String,
-    default: 'Employee'
+    default: ''
   },
   miscNotes: {
     type: String,
@@ -89,20 +109,23 @@ var UserSchema = new Schema({
   },
   daysLate: {
     type: String,
-    default: '0'
+    default: ''
   },
-  dateOfTermination: {
+  daysOff: {
+    type: String,
+    default: ''
+  },
+  dateofTerm: {
     type: String,
     default: 'Currently Employed'
   },
-  terminationNotes: {
+  reasonForTerm: {
     type: String,
     default: 'N/A'
   },
-  //whether or not they can log in
-  active: {
+  birthday: {
     type: String,
-    default: 'Active'
+    default: ''
   },
   favoriteColor: {
     type: String,
@@ -120,41 +143,13 @@ var UserSchema = new Schema({
     type: String,
     default: ''
   },
-  favoriteReasonToWorkAtGym: {
+  favoriteGymReason: {
     type: String,
     default: ''
   },
   favoriteOther: {
     type: String,
     default: ''
-  },
-  salt: {
-    type: String
-  },
-  profileImageURL: {
-    type: String,
-    default: 'modules/users/client/img/profile/default.png'
-  },
-  provider: {
-    type: String,
-    required: 'Provider is required'
-  },
-  providerData: {},
-  additionalProvidersData: {},
-  roles: {
-    type: [{
-      type: String,
-      enum: ['user', 'admin']
-    }],
-    default: ['user'],
-    required: 'Please provide at least one role'
-  },
-  updated: {
-    type: Date
-  },
-  created: {
-    type: Date,
-    default: Date.now
   },
   /* For reset password */
   resetPasswordToken: {

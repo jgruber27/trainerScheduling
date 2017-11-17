@@ -1,0 +1,107 @@
+<div ng-controller="AuthenticationController">
+  <h3 class="col-md-12 text-center">Sign up using your email</h3>
+  <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+    <form name="userForm" ng-submit="signup(userForm.$valid)" class="signin" novalidate autocomplete="off">
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" class="form-control" ng-model="credentials.firstName" placeholder="First Name" required>
+          <div ng-messages="userForm.firstName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">First name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" class="form-control" ng-model="credentials.lastName" placeholder="Last Name" required>
+          <div ng-messages="userForm.lastName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Last name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" ng-model="credentials.email" placeholder="Email" lowercase required>
+          <div ng-messages="userForm.email.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email address is required.</p>
+            <p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="favoriteOther">favoriteOther</label>
+          <input type="text" id="favoriteOther" name="favoriteOther" class="form-control" ng-model="credentials.favoriteOther" placeholder="favoriteOther" lowercase required>
+          <div ng-messages="userForm.favoriteOther.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">favoriteOther is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
+          <div ng-messages="userForm.password.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Password is required.</p>
+            <div ng-repeat="passwordError in passwordErrors">
+              <p class="help-block error-text" ng-show="userForm.password.$error.requirements">{{passwordError}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" ng-show="!userForm.password.$error.required">
+          <label>Password Requirements</label>
+          <progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></progressbar>
+        </div>
+        <div class="text-center form-group">
+          <button type="submit" class="btn btn-primary">Sign up</button>
+          &nbsp; or&nbsp;
+          <a ui-sref="authentication.signin" class="show-signup">Sign in</a>
+        </div>
+        <div ng-show="error" class="text-center text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="birthday">Birthday (MM/DD/YYYY)</label>
+          <input type="text" id="birthday" name="birthday" class="form-control" ng-model="credentials.birthday" placeholder="Birthday">
+          <div ng-messages="userForm.birthday.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Birthday is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="hireDate">Hire Date (MM/DD/YYYY)</label>
+          <input type="text" id="hireDate" name="hireDate" class="form-control" ng-model="credentials.hireDate" placeholder="hireDate">
+        </div>
+        <div class="form-group">
+          <label for="certifications">Certifications</label>
+          <input type="text" id="certifications" name="certifications" class="form-control" ng-model="credentials.certifications" placeholder="Certifications">
+        </div>
+        <div class="form-group">
+          <label for="officialTitle">Official Title</label>
+          <input type="text" id="officialTitle" name="officialTitle" class="form-control" ng-model="credentials.officialTitle" placeholder="Official Title">
+        </div>
+        <div class="form-group">
+          <label for="favoriteColor">Favorite Color</label>
+          <input type="text" id="favoriteColor" name="favoriteColor" class="form-control" ng-model="credentials.favoriteColor" placeholder="Favorite Color">
+        </div>
+        <div class="form-group">
+          <label for="favoriteCake">Favorite Cake Flavor</label>
+          <input type="text" id="favoriteCake" name="favoriteCake" class="form-control" ng-model="credentials.favoriteCake" placeholder="Favorite Cake Flavor">
+        </div>
+        <div class="form-group">
+          <label for="favoriteAnimal">Favorite Animal</label>
+          <input type="text" id="favoriteAnimal" name="favoriteAnimal" class="form-control" ng-model="credentials.favoriteAnimal" placeholder="Favorite Animal">
+        </div>
+        <div class="form-group">
+          <label for="favoriteGymReason">Favorite Reason to Work at Gym</label>
+          <input type="text" id="favoriteGymReason" name="favoriteGymReason" class="form-control" ng-model="credentials.favoriteGymReason" placeholder="Favorite Gym Reason">
+        </div>
+        <div class="form-group">
+          <label for="favoriteKidsBook">Favorite Kids Book</label>
+          <input type="text" id="favoriteKidsBook" name="favoriteKidsBook" class="form-control" ng-model="credentials.favoriteKidsBook" placeholder="Favorite Kids Book">
+        </div>
+        <div class="form-group">
+          <label for="favoriteOther">Random Fact About Person</label>
+          <input type="text" id="favoriteOther" name="favoriteOther" class="form-control" ng-model="credentials.favoriteOther" placeholder="Random Fact!">
+        </div>
+        <div class="form-group">
+          <label for="miscNotes">Miscellaneous Notes</label>
+          <input type="text" id="miscNotes" name="miscNotes" class="form-control" ng-model="credentials.miscNotes" placeholder="Miscellaneous Notes">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

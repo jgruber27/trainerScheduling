@@ -1,0 +1,133 @@
+<section>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 ng-bind="user.username"></h1>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-primary" ui-sref="admin.user-edit({userId: user._id})">
+          <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn btn-primary" ng-click="remove();" ng-if="user._id !== authentication.user._id">
+          <i class="glyphicon glyphicon-trash"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-3"><strong>First Name</strong></div>
+        <div class="col-md-6" ng-bind="user.firstName"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Last Name</strong></div>
+        <div class="col-md-6" ng-bind="user.lastName"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Email</strong></div>
+        <div class="col-md-6" ng-bind="user.email"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Provider</strong></div>
+        <div class="col-md-6" ng-bind="user.provider"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Created</strong></div>
+        <div class="col-md-6" ng-bind="user.created | date:'mediumDate'"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Roles</strong></div>
+        <div class="col-md-6" ng-bind="user.roles"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Birthday</strong></div>
+        <div class="col-md-6" ng-bind="user.birthday"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Hire Date</strong></div>
+        <div class="col-md-6" ng-bind="user.hireDate"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Certifications</strong></div>
+        <div class="col-md-6" ng-bind="user.certifications"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Positions</strong></div>
+        <div class="col-md-6" ng-bind="user.positions"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Official Title</strong></div>
+        <div class="col-md-6" ng-bind="user.officialTitle"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Favorite Color</strong></div>
+        <div class="col-md-6" ng-bind="user.favoriteColor"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Favorite Cake Flavor</strong></div>
+        <div class="col-md-6" ng-bind="user.favoriteCake"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Favorite Animal</strong></div>
+        <div class="col-md-6" ng-bind="user.favoriteAnimal"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Favorite Kids Book</strong></div>
+        <div class="col-md-6" ng-bind="user.favoriteKidsBook"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Favorite Reason to Work at Gym</strong></div>
+        <div class="col-md-6" ng-bind="user.favoriteGymReason"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Random Fact About Person</strong></div>
+        <div class="col-md-6" ng-bind="user.favoriteOther"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Miscellaneous Notes</strong></div>
+        <div class="col-md-6" ng-bind="user.miscNotes"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Days Late</strong></div>
+        <div class="col-md-6" ng-bind="user.daysLate"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Days Requested Off</strong></div>
+        <div class="col-md-6" ng-bind="user.daysOff"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Date of Termination</strong></div>
+        <div class="col-md-6" ng-bind="user.dateOfTerm"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Reason for Termination</strong></div>
+        <div class="col-md-6" ng-bind="user.reasonForTerm"></div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
